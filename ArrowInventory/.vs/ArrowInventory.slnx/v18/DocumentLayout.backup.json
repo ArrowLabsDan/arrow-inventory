@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Arrow-Inventory\\ArrowInventory\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\adddevices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\adddevices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F95E8AEE-ADF9-46DE-8BFC-8C9CF2FB6F28}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Program.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
+              "RelativeToolTip": "ArrowInventory\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T21:47:05.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddDevices.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\AddDevices.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\AddDevices.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T21:41:44.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Privacy.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Privacy.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T20:57:04.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Index.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T20:59:00.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-07T21:15:04.084Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
