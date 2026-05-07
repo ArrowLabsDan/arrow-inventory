@@ -8,7 +8,27 @@
 
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
-    <p>Input Hostname:</p>
+    </div>
+@if (!string.IsNullOrEmpty(Model.SuccessMessage))
+{
+    <div class="alert alert-success">
+        @Model.SuccessMessage
 
+    </div>
+}
 
-</div>
+<form method="post">
+
+    <div class="mb-3">
+        <label>Hostname</label>
+
+        <input asp-for="Hostname" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+
+    <button type="reset" class="btn btn-secondary">
+        Clear
+    </button>
+</form>
