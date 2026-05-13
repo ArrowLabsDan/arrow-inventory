@@ -4,10 +4,36 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
+<div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="display-4">Welcome to Arrow labs Inventory System</h1>
-    <p>For now, use the navbar to go to "add" or "manage" devices</a>.</p>
-
-
-
 </div>
+
+
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col-md-3">
+                <div class="card bg-body-tertiary border-secondary text-body">
+                    <div class="card-body">
+                        <h6 class="text-center text-secondary">
+                            Total Devices
+                        </h6>
+                        <h2 class="text-center">@Model.Devices.Count</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-body-tertiary border-secondary text-body">
+                    <div class="card-body">
+                        <h6 class="text-center text-secondary">
+                            Total Virtual Machines
+                        </h6>
+                        <h2 class ="text-center">@Model.Devices.Count(d => d.isVirtualMachine == true)</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

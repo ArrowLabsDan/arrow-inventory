@@ -1,5 +1,7 @@
 ﻿@page
 @model ManageDevicesModel
+<!--
+
 @{
     ViewData["Title"] = "Manage Devices";
 }
@@ -7,10 +9,222 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
     <p>Search Hostname:</p>
+</div>
+
+-->
 
 
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h1 class="mb-0">ArrowLabs Inventory</h1>
+        <small class="text-secondary">
+            ArrowLabs Device Dashboard
+        </small>
+    </div>
+
 </div>
-<div
-    class="form-text accordion-flush"
-    <p>What is this</p>
+
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card bg-body-tertiary border-secondary text-body">
+                    <div class="card-body">
+                        <h6 class="text-center text-secondary">
+                            Total Devices
+                        </h6>
+                        <h2 class="text-center">@Model.Devices.Count</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="card-body p-0">
+        <table class="table table-bordered table-hover mb-0 text-center align-middle">
+            <thead>
+                <tr>
+                    <th>Hostname</th>
+                    <th>Serial Number</th>
+                    <th>Model</th>
+                    <th>IPV4</th>
+                    <th>Virtual Machine</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var device in Model.Devices)
+                {
+                    <tr class="clickable-row" style="cursor:pointer"
+                        data-hostname="@device.Hostname"
+                        data-serial="@device.SerialNumber"
+                        data-model="@device.Model"
+                        data-ip="@device.IP"
+                        data-vm="@device.isVirtualMachine"
+                        data-location="@device.location"
+                        data-description="@device.description">
+                        <td>@device.Hostname</td>
+                        <td>@device.SerialNumber</td>
+                        <td>@device.Model</td>
+                        <td>@device.IP</td>
+                        <td>@device.isVirtualMachine</td>
+                        <td>@device.location</td>
+                        <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                            @device.description</td>
+
+                        <td class="text-center">
+                            <div class="dropdown">
+                                <button class="btn btn-sm"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                onclick="event.stopPropagation()">
+                                    ⋮
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <button class="dropdown-item text-danger edit-btn"
+                                        type="button"
+                                        onclick="event.stopPropagation()">
+                                    Edit
+                                </button>
+                                    </li>
+                                    <li>
+                                        <form method="post" asp-page-handler="Delete">
+                                            <input type="hidden"
+                                                name="hostname"
+                                                value="@device.Hostname" />
+                                            <button type="submit"
+                                                    class="dropdown-item text-danger"
+                                                    onclick="event.stopPropagation()">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Devices.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-secondary align-middle">
+                            No Devices Found
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="deviceModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content bg-body border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title" id="modalHostname"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page-handler="Edit" id="editForm">
+                    <input type="hidden" name="hostname" id="editHostname" />
+                    <dl class="row">
+                        <dt class="col-sm-4">Serial Number</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalSerial"></span>
+                            <input class="form-control edit-mode d-none" name="serialNumber" id="editSerial" />
+                        </dd>
+
+                        <dt class="col-sm-4">Model</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalModel"></span>
+                            <input class="form-control edit-mode d-none" name="model" id="editModel" />
+                        </dd>
+
+                        <dt class="col-sm-4">IPV4</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalIp"></span>
+                            <input class="form-control edit-mode d-none" name="ip" id="editIp" />
+                        </dd>
+
+                        <dt class="col-sm-4">Virtual Machine</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalVm"></span>
+                            <select class="form-select edit-mode d-none" name="isVirtualMachine" id="editVm">
+                                <option value="true">True</option>
+                                <option value="false">False</option>
+                            </select>
+                        </dd>
+
+                        <dt class="col-sm-4">Location</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalLocation"></span>
+                            <input class="form-control edit-mode d-none" name="location" id="editLocation" />
+                        </dd>
+
+                        <dt class="col-sm-4">Description</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalDescription"></span>
+                            <textarea class="form-control edit-mode d-none" name="description" id="editDescription" rows="3"></textarea>
+                        </dd>
+                    </dl>
+                </form>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" form="editForm" class="btn btn-primary edit-mode d-none" id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        // Row click - view mode
+        document.querySelectorAll('.clickable-row').forEach(row => {
+            row.addEventListener('click', function (e) {
+                if (e.target.closest('.dropdown')) return;
+                populateModal(this, false);
+            });
+        });
+
+        // Edit button click - edit mode
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                const row = this.closest('tr');
+                populateModal(row, true);
+            });
+        });
+
+        function populateModal(row, editMode) {
+            // Populate view spans
+            document.getElementById('modalHostname').textContent = row.dataset.hostname;
+            document.getElementById('modalSerial').textContent = row.dataset.serial || '—';
+            document.getElementById('modalModel').textContent = row.dataset.model || '—';
+            document.getElementById('modalIp').textContent = row.dataset.ip;
+            document.getElementById('modalVm').textContent = row.dataset.vm;
+            document.getElementById('modalLocation').textContent = row.dataset.location || '—';
+            document.getElementById('modalDescription').textContent = row.dataset.description || '—';
+
+            // Populate edit inputs
+            document.getElementById('editHostname').value = row.dataset.hostname;
+            document.getElementById('editSerial').value = row.dataset.serial;
+            document.getElementById('editModel').value = row.dataset.model;
+            document.getElementById('editIp').value = row.dataset.ip;
+            document.getElementById('editVm').value = row.dataset.vm.toLowerCase();
+            document.getElementById('editLocation').value = row.dataset.location;
+            document.getElementById('editDescription').value = row.dataset.description;
+
+            // Toggle edit/view mode
+            document.querySelectorAll('.edit-mode').forEach(el => el.classList.toggle('d-none', !editMode));
+            document.querySelectorAll('.view-mode').forEach(el => el.classList.toggle('d-none', editMode));
+
+            new bootstrap.Modal(document.getElementById('deviceModal')).show();
+        }
+    </script>
+}

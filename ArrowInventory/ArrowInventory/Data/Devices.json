@@ -1,11 +1,38 @@
 [
   {
-    "Hostname": "Arwlabdc01"
+    "Hostname": "ARWLABHPV01",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": "192.168.1.50",
+    "description": null,
+    "location": null
   },
   {
-    "Hostname": "Arwlabdc02"
+    "Hostname": "ARWLABHPV02",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": "0.0.0.0",
+    "description": "",
+    "location": ""
   },
   {
-    "Hostname": "ARWLAB-CASSRV01"
+    "Hostname": "ARWLABHPV03",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": "0.0.0.0",
+    "description": "",
+    "location": ""
+  },
+  {
+    "Hostname": "ARWLAB-CASSRV01",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": "0.0.0.0",
+    "description": null,
+    "location": null
   }
 ]

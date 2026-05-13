@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ArrowInventory")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b2aa02f145ad8cd168434b789e8d3e7dba090f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+62d1369a3affdcd27c0528fcc7da93d74bd940b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ArrowInventory")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ArrowInventory")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

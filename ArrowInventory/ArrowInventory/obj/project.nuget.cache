@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TPEssSk7/vY=",
+  "dgSpecHash": "QFyie79pwlc=",
   "success": true,
   "projectFilePath": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\ArrowInventory.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Danie\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.26100.57\\microsoft.windows.sdk.net.ref.10.0.26100.57.nupkg.sha512"
+  ],
   "logs": []
 }

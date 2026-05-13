@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+    data-bs-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom border-secondary box-shadow mb-5">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
                     <img src="https://arwlabazblob.blob.core.windows.net/intune-assets/ArrowLabs-Icon.png"
@@ -50,15 +51,21 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="py-4">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - ArrowInventory - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>
+            &copy; 2026 - ArrowStudio - Support@ArrowStudio.co.uk <a asp-area="" asp-page="/Privacy">Privacy</a>
+            </span>
+                <button class="btn btn-outline-secondary btn-sm align-content-end" id="themeToggle">
+                    Toggle Theme
+                </button>
         </div>
+
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -66,5 +73,26 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+
+        toggleBtn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            const next = current == 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', next);
+            localStorage.setItem('theme', next);
+        });
+
+        const saved = localStorage.getItem('theme');
+        if(saved){
+            document.documentElement.setAttribute('data-bs-theme', saved);
+        }
+    </script>
+
+
 </body>
 </html>

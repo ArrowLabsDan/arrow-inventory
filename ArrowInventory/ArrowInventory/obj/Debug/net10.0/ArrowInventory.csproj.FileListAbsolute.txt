@@ -90,7 +90,6 @@ F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\staticwebasse
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\staticwebassets.development.json
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\swae.build.ex.cache
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\ArrowInventory.dll
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\refint\ArrowInventory.dll
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\ArrowInventory.pdb
@@ -98,3 +97,4 @@ F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\ArrowInventor
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\ref\ArrowInventory.dll
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0\ArrowInventory.sourcelink.json
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\bin\Debug\net10.0\Data\Devices.json
+F:\Arrow-Inventory\ArrowInventory\ArrowInventory\bin\Debug\net10.0\dotnet-tools.json

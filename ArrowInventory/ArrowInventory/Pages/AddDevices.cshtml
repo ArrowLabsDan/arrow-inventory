@@ -9,10 +9,10 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
     </div>
-@if (!string.IsNullOrEmpty(Model.SuccessMessage))
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
 {
-    <div class="alert alert-success">
-        @Model.SuccessMessage
+    <div class="alert alert-@Model.StatusType">
+        @Model.StatusMessage
 
     </div>
 }
@@ -24,6 +24,45 @@
 
         <input asp-for="Hostname" class="form-control" />
     </div>
+
+    <div class="mb-3">
+        <label>Serial Number</label>
+
+        <input asp-for="SerialNumber" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Model</label>
+
+        <input asp-for="Model" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>IP Address</label>
+
+        <input asp-for="IP" class="form-control"/>
+    </div>
+
+    <div class="mb-3">
+        <label>Virtual Machine</label>
+
+        <input asp-for="isVirtualMachine" class="form-check"/>
+    </div>
+
+    <div class="mb-3">
+        <label>Location</label>
+
+        <input asp-for="location" class="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label>Description</label>
+
+        <input asp-for="description" class="form-control" />
+    </div>
+
+
     <button type="submit" class="btn btn-primary">
         Submit
     </button>

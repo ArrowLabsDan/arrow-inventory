@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "F:\\Arrow-Inventory\\ArrowInventory\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\adddevices.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\adddevices.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,40 +19,32 @@
       "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\adddevices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\data\\devices.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\data\\devices.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\arrowinventory.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\arrowinventory.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\models\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\models\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\managedevices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\managedevices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\managedevices.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\managedevices.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\services\\deviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|f:\\arrow-inventory\\arrowinventory\\arrowinventory\\models\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25E7532F-07DD-469F-6549-4B59F59AEA06}|ArrowInventory\\ArrowInventory.csproj|solutionrelative:arrowinventory\\models\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,84 +54,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DeviceService.cs",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Services\\DeviceService.cs",
-              "RelativeDocumentMoniker": "ArrowInventory\\Services\\DeviceService.cs",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Services\\DeviceService.cs",
-              "RelativeToolTip": "ArrowInventory\\Services\\DeviceService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "ArrowInventory\\wwwroot\\css\\site.css",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "ArrowInventory\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-13T19:24:30.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Program.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
+              "RelativeToolTip": "ArrowInventory\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:59:02.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Devices.json",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Data\\Devices.json",
-              "RelativeDocumentMoniker": "ArrowInventory\\Data\\Devices.json",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Data\\Devices.json",
-              "RelativeToolTip": "ArrowInventory\\Data\\Devices.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-07T22:58:21.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ArrowInventory",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\ArrowInventory.csproj",
-              "RelativeDocumentMoniker": "ArrowInventory\\ArrowInventory.csproj",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\ArrowInventory.csproj",
-              "RelativeToolTip": "ArrowInventory\\ArrowInventory.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-07T22:58:05.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Devices.cs",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Models\\Devices.cs",
-              "RelativeDocumentMoniker": "ArrowInventory\\Models\\Devices.cs",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Models\\Devices.cs",
-              "RelativeToolTip": "ArrowInventory\\Models\\Devices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:57:21.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddDevices.cshtml.cs",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml.cs",
-              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\AddDevices.cshtml.cs",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml.cs",
-              "RelativeToolTip": "ArrowInventory\\Pages\\AddDevices.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T22:28:04.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddDevices.cshtml",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
-              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\AddDevices.cshtml",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
-              "RelativeToolTip": "ArrowInventory\\Pages\\AddDevices.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T21:41:44.394Z",
+              "WhenOpened": "2026-05-13T18:59:04.384Z",
               "EditorCaption": ""
             },
             {
@@ -141,66 +89,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
-              "RelativeDocumentMoniker": "ArrowInventory\\Program.cs",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Program.cs",
-              "RelativeToolTip": "ArrowInventory\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T21:47:05.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ManageDevices.cshtml",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml",
-              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\ManageDevices.cshtml",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml",
-              "RelativeToolTip": "ArrowInventory\\Pages\\ManageDevices.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAGAAAAAAAAAA==",
+              "Title": "AddDevices.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\AddDevices.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\AddDevices.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T22:12:23.806Z",
+              "WhenOpened": "2026-05-08T20:52:22.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Privacy.cshtml",
-              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Privacy.cshtml",
-              "RelativeToolTip": "ArrowInventory\\Pages\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T20:57:04.91Z",
+              "Title": "Devices.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Models\\Devices.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Models\\Devices.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Models\\Devices.cs",
+              "RelativeToolTip": "ArrowInventory\\Models\\Devices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T20:12:30.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "AddDevices.cshtml.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\AddDevices.cshtml.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\AddDevices.cshtml.cs",
+              "RelativeToolTip": "ArrowInventory\\Pages\\AddDevices.cshtml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowEEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T20:46:26.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManageDevices.cshtml",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\ManageDevices.cshtml",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml",
+              "RelativeToolTip": "ArrowInventory\\Pages\\ManageDevices.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-08T20:09:49.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageDevices.cshtml.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\ManageDevices.cshtml.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\ManageDevices.cshtml.cs",
+              "RelativeToolTip": "ArrowInventory\\Pages\\ManageDevices.cshtml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T20:09:29.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Index.cshtml",
               "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml",
               "RelativeToolTip": "ArrowInventory\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T20:59:00.249Z",
+              "WhenOpened": "2026-05-08T20:03:51.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Index.cshtml.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "ArrowInventory\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T19:59:31.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "ArrowInventory\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAQwCIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwDsAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-05-07T21:15:04.084Z",
+              "WhenOpened": "2026-05-08T19:57:57.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DeviceService.cs",
+              "DocumentMoniker": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Services\\DeviceService.cs",
+              "RelativeDocumentMoniker": "ArrowInventory\\Services\\DeviceService.cs",
+              "ToolTip": "F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\Services\\DeviceService.cs",
+              "RelativeToolTip": "ArrowInventory\\Services\\DeviceService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwDMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T23:21:44.442Z",
               "EditorCaption": ""
             }
           ]

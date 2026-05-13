@@ -1,5 +1,5 @@
-﻿using System.Text.Json;
-using ArrowInventory.Models;
+﻿using ArrowInventory.Models;
+using System.Text.Json;
 
 
 namespace ArrowInventory.Services
@@ -22,6 +22,38 @@ namespace ArrowInventory.Services
 
             File.WriteAllText(_filePath, json);
         }
+
+        public void DeleteDevice(string hostname)
+        {
+            var devices = GetDevices();
+
+            var deviceToRemove = devices.FirstOrDefault(x => x.Hostname == hostname);
+
+            if (deviceToRemove != null)
+            {
+                devices.Remove(deviceToRemove);
+                SaveDevices(devices);
+            }
+        }
+
+        public void UpdateDevices(Devices updated)
+        {
+            var devices = GetDevices();
+            var existing = devices.FirstOrDefault(x => x.Hostname == updated.Hostname);
+
+            if(existing != null)
+            {
+                existing.SerialNumber = updated.SerialNumber;
+                existing.Model = updated.Model;
+                existing.isVirtualMachine = updated.isVirtualMachine;
+                existing.IP = updated.IP;
+                existing.description = updated.description;
+                existing.location = updated.location;
+                SaveDevices(devices);
+            }
+        }
+
+
 
     }
 }
