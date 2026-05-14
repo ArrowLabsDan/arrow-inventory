@@ -1,8 +1,0 @@
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\ArrowInventory.exe
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\appsettings.json
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\Data\Devices.json
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\ArrowInventory.dll
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\ArrowInventory.deps.json
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\ArrowInventory.runtimeconfig.json
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Release\net10.0\PubTmp\Out\ArrowInventory.pdb
