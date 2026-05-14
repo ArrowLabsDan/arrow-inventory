@@ -30,7 +30,7 @@ namespace ArrowInventory.Pages
             return RedirectToPage();
         }
 
-        public IActionResult OnPostEdit(string hostname, string serialNumber, string model, bool isVirtualMachine, string ip, string description, string location)
+        public IActionResult OnPostEdit(string hostname, string serialNumber, string model, bool isVirtualMachine, string ip, string description, string location, string cpu, string ram, string storage, string macaddress, string os)
         {
             var updated = new Devices
             {
@@ -40,7 +40,13 @@ namespace ArrowInventory.Pages
                 isVirtualMachine = isVirtualMachine,
                 IP = ip,
                 description = description,
-                location = location
+                location = location,
+                CPU = cpu,
+                RAM = ram,
+                Storage = storage,
+                MACAddress = macaddress,
+                OS = os
+
             };
 
             _deviceService.UpdateDevices(updated);

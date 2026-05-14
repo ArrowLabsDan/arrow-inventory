@@ -10,6 +10,7 @@ namespace ArrowInventory.Pages
 
         private readonly DeviceService _deviceService;
 
+        // Form fields
         [BindProperty]
         public string Hostname { get; set; } = "";
         [BindProperty]
@@ -24,6 +25,18 @@ namespace ArrowInventory.Pages
         public string description { get; set; } = "";
         [BindProperty]
         public string location { get; set; } = "";
+        [BindProperty]
+        public string CPU { get; set; } = "";
+        [BindProperty]
+        public string RAM { get; set; } = "";
+        [BindProperty]
+        public string Storage { get; set; } = "";
+        [BindProperty]
+        public string MACAddress { get; set; } = "";
+        [BindProperty]
+        public string OS { get; set; } = "";
+
+        // UI Feedback properties
         public string StatusMessage { get; set; } = "";
         public string StatusType { get; set; } = "";
 
@@ -64,7 +77,12 @@ namespace ArrowInventory.Pages
                 IP = IP,
                 location = location,
                 description = description,
-                isVirtualMachine = isVirtualMachine
+                isVirtualMachine = isVirtualMachine,
+                CPU = CPU,
+                RAM = RAM,
+                Storage = Storage,
+                MACAddress = MACAddress,
+                OS = OS
 
             });
 
@@ -84,6 +102,11 @@ namespace ArrowInventory.Pages
             Model = "";
             isVirtualMachine = false;
             IP = "0.0.0.0";
+            CPU = "";
+            RAM = "";
+            Storage = "";
+            MACAddress = "";
+            OS = "";
 
         }
     }

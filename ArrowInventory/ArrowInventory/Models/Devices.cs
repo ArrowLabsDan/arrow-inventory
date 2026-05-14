@@ -9,5 +9,10 @@
         public string IP { get; set; } = "0.0.0.0";
         public string description { get; set; } = "";
         public string location { get; set; } = "";
+        public string CPU { get; set; } = "";
+        public string RAM { get; set; } = "";
+        public string Storage { get; set; } = "";
+        public string MACAddress { get; set; } = "";
+        public string OS { get; set; } = "";
     }
 }

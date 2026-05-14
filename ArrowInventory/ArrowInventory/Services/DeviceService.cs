@@ -49,6 +49,11 @@ namespace ArrowInventory.Services
                 existing.IP = updated.IP;
                 existing.description = updated.description;
                 existing.location = updated.location;
+                existing.CPU = updated.CPU;
+                existing.RAM = updated.RAM;
+                existing.Storage = updated.Storage;
+                existing.MACAddress = updated.MACAddress;
+                existing.OS = updated.OS;
                 SaveDevices(devices);
             }
         }

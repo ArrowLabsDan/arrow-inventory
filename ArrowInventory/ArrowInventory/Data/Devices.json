@@ -6,7 +6,12 @@
     "isVirtualMachine": false,
     "IP": "192.168.1.49",
     "description": "Hypervisor 01 - Core SCCM Infra \u002B Domain Controller",
-    "location": "Office"
+    "location": "Office",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLABHPV02",
@@ -15,7 +20,12 @@
     "isVirtualMachine": false,
     "IP": "192.168.1.50",
     "description": "Hypervisor 02 - Secondary Site Server \u002B Test Devices",
-    "location": "Office"
+    "location": "Office",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLABHPV03",
@@ -24,7 +34,12 @@
     "isVirtualMachine": false,
     "IP": "192.168.1.67",
     "description": "Hypervisor 03 - Test bed - No Core Infra! ",
-    "location": "Office"
+    "location": "Office",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLAB-CASSRV01",
@@ -33,7 +48,12 @@
     "isVirtualMachine": true,
     "IP": "192.168.1.55",
     "description": "SCCM CAS Server \u002B APEX SUP",
-    "location": "ARWLABHPV01"
+    "location": "ARWLABHPV01",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLABDC01",
@@ -42,7 +62,12 @@
     "isVirtualMachine": true,
     "IP": "192.168.1.40",
     "description": "Domain Controller",
-    "location": "ARWLABHPV01"
+    "location": "ARWLABHPV01",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLAB-PRISRV01",
@@ -51,7 +76,12 @@
     "isVirtualMachine": true,
     "IP": " 192.168.1.55",
     "description": "SCCM Primary Site Server",
-    "location": "ARWLABHPV01"
+    "location": "ARWLABHPV01",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLAB-SECSRV02",
@@ -60,7 +90,12 @@
     "isVirtualMachine": true,
     "IP": "192.168.1.66",
     "description": "SCCM Secondary Site Server",
-    "location": "ARWLABHPV02"
+    "location": "ARWLABHPV02",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   },
   {
     "Hostname": "ARWLABPS01",
@@ -69,6 +104,11 @@
     "isVirtualMachine": true,
     "IP": "192.168.1.42",
     "description": "Package Source",
-    "location": "ARWLABHPV01"
+    "location": "ARWLABHPV01",
+    "CPU": "",
+    "RAM": "",
+    "Storage": "",
+    "MACAddress": "",
+    "OS": ""
   }
 ]

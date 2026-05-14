@@ -44,6 +44,12 @@
     </div>
 
     <div class="mb-3">
+        <label>MAC Address</label>
+
+        <input asp-for="MACAddress" class="form-control" />
+    </div>
+
+    <div class="mb-3">
         <label>Virtual Machine</label>
 
         <input asp-for="isVirtualMachine" class="form-check"/>
@@ -55,13 +61,35 @@
         <input asp-for="location" class="form-control" />
     </div>
 
+    <div class="mb-3">
+        <label>CPU</label>
+
+        <input asp-for="CPU" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>RAM</label>
+
+        <input asp-for="RAM" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Storage</label>
+
+        <input asp-for="Storage" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Operating System</label>
+
+        <input asp-for="OS" class="form-control" />
+    </div>
 
     <div class="mb-3">
         <label>Description</label>
 
         <input asp-for="description" class="form-control" />
     </div>
-
 
     <button type="submit" class="btn btn-primary">
         Submit

@@ -51,8 +51,13 @@
                     <th>Serial Number</th>
                     <th>Model</th>
                     <th>IPV4</th>
+                    <th>MAC Address</th>
                     <th>Virtual Machine</th>
                     <th>Location</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>Storage</th>
+                    <th>Operating System</th>
                     <th>Description</th>
                     <th class="text-center">Actions</th>
                 </tr>
@@ -67,13 +72,25 @@
                         data-ip="@device.IP"
                         data-vm="@device.isVirtualMachine"
                         data-location="@device.location"
-                        data-description="@device.description">
+                        data-description="@device.description"
+                        data-cpu="@device.CPU"
+                        data-ram="@device.RAM"
+                        data-storage="@device.Storage"
+                        data-os="@device.OS"
+                        data-macaddress="@device.MACAddress"
+                    >
                         <td>@device.Hostname</td>
                         <td>@device.SerialNumber</td>
                         <td>@device.Model</td>
                         <td>@device.IP</td>
+                        <td>@device.MACAddress</td>
                         <td>@device.isVirtualMachine</td>
                         <td>@device.location</td>
+                        <td>@device.CPU</td>
+                        <td>@device.RAM</td>
+                        <td>@device.Storage</td>
+                        <td>@device.OS</td>
+
                         <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
                             @device.description</td>
 
@@ -151,6 +168,12 @@
                             <input class="form-control edit-mode d-none" name="ip" id="editIp" />
                         </dd>
 
+                        <dt class="col-sm-4">Mac Address</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalMACAddress"></span>
+                            <input class="form-control edit-mode d-none" name="MACAddress" id="editMACAddress" />
+                        </dd>
+
                         <dt class="col-sm-4">Virtual Machine</dt>
                         <dd class="col-sm-8">
                             <span class="view-mode" id="modalVm"></span>
@@ -164,6 +187,30 @@
                         <dd class="col-sm-8">
                             <span class="view-mode" id="modalLocation"></span>
                             <input class="form-control edit-mode d-none" name="location" id="editLocation" />
+                        </dd>
+
+                        <dt class="col-sm-4">CPU</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalCPU"></span>
+                            <input class="form-control edit-mode d-none" name="CPU" id="editCPU" />
+                        </dd>
+
+                        <dt class="col-sm-4">RAM</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalRAM"></span>
+                            <input class="form-control edit-mode d-none" name="RAM" id="editRAM" />
+                        </dd>
+
+                        <dt class="col-sm-4">Storage</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalStorage"></span>
+                            <input class="form-control edit-mode d-none" name="Storage" id="editStorage" />
+                        </dd>
+
+                        <dt class="col-sm-4">OS</dt>
+                        <dd class="col-sm-8">
+                            <span class="view-mode" id="modalOS"></span>
+                            <input class="form-control edit-mode d-none" name="OS" id="editOS" />
                         </dd>
 
                         <dt class="col-sm-4">Description</dt>
@@ -209,7 +256,13 @@
             document.getElementById('modalIp').textContent = row.dataset.ip;
             document.getElementById('modalVm').textContent = row.dataset.vm;
             document.getElementById('modalLocation').textContent = row.dataset.location || '—';
-            document.getElementById('modalDescription').textContent = row.dataset.description || '—';
+            document.getElementById('modalDescription').textContent = row.dataset.description || '-';
+            document.getElementById('modalMACAddress').textContent = row.dataset.macaddress || '-';
+            document.getElementById('modalCPU').textContent = row.dataset.cpu || '-';
+            document.getElementById('modalRAM').textContent = row.dataset.ram || '-';
+            document.getElementById('modalStorage').textContent = row.dataset.storage || '-';
+            document.getElementById('modalOS').textContent = row.dataset.os || '-';
+           
 
             // Populate edit inputs
             document.getElementById('editHostname').value = row.dataset.hostname;
@@ -219,6 +272,11 @@
             document.getElementById('editVm').value = row.dataset.vm.toLowerCase();
             document.getElementById('editLocation').value = row.dataset.location;
             document.getElementById('editDescription').value = row.dataset.description;
+            document.getElementById('editMACAddress').value = row.dataset.macaddress;
+            document.getElementById('editCPU').value = row.dataset.cpu;
+            document.getElementById('editRAM').value = row.dataset.ram;
+            document.getElementById('editStorage').value = row.dataset.storage;
+            document.getElementById('editOS').value = row.dataset.os;
 
             // Toggle edit/view mode
             document.querySelectorAll('.edit-mode').forEach(el => el.classList.toggle('d-none', !editMode));
