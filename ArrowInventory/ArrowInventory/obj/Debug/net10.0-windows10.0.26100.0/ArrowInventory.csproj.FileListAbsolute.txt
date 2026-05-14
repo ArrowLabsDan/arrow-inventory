@@ -26,7 +26,8 @@ F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.2
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\scopedcss\bundle\ArrowInventory.styles.css
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\scopedcss\projectbundle\ArrowInventory.bundle.scp.css
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\twc65gmpdy-{0}-61n19gt1b8-61n19gt1b8.gz
+F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\2nvn6claum-{0}-r8af175scx-r8af175scx.gz
+F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\twc65gmpdy-{0}-qly5iqcg52-qly5iqcg52.gz
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\qglktyhpei-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\o9dyf5q5yw-{0}-bqjiyaj88i-bqjiyaj88i.gz
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\v4j49ahtdo-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -94,11 +95,10 @@ F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.2
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\staticwebassets.development.json
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\staticwebassets.build.endpoints.json
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\swae.build.ex.cache
+F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\staticwebassets.upToDateCheck.txt
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\ArrowInv.75CF8F1E.Up2Date
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\ArrowInventory.dll
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\refint\ArrowInventory.dll
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\ArrowInventory.pdb
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\ArrowInventory.genruntimeconfig.cache
 F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\ref\ArrowInventory.dll
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\staticwebassets.upToDateCheck.txt
-F:\Arrow-Inventory\ArrowInventory\ArrowInventory\obj\Debug\net10.0-windows10.0.26100.0\compressed\2nvn6claum-{0}-r8af175scx-r8af175scx.gz

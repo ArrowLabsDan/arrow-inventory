@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Arrow-AssetTest" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\Arrow-Inventory\\ArrowInventory\\ArrowInventory\\obj\\Release\\net10\.0-windows10\.0\.26100\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>
