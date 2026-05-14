@@ -9,12 +9,15 @@ namespace ArrowInventory.Pages
     {
 
         private readonly DeviceService _deviceService;
+        private readonly SiteService _siteService;
 
         public List<Devices> Devices { get; set; } = [];
+        public List<Sites> Sites { get; set; } = [];
 
-        public ManageDevicesModel(DeviceService deviceService)
+        public ManageDevicesModel(DeviceService deviceService, SiteService siteService)
         {
             _deviceService = deviceService;
+            _siteService = siteService;
         }
 
 
@@ -22,6 +25,7 @@ namespace ArrowInventory.Pages
         public void OnGet()
         {
             Devices = _deviceService.GetDevices();
+            Sites = _siteService.GetSites();
         }
 
         public IActionResult OnPostDelete(string hostname)
@@ -30,11 +34,12 @@ namespace ArrowInventory.Pages
             return RedirectToPage();
         }
 
-        public IActionResult OnPostEdit(string hostname, string serialNumber, string model, bool isVirtualMachine, string ip, string description, string location, string cpu, string ram, string storage, string macaddress, string os)
+        public IActionResult OnPostEdit(string hostname, string serialNumber, string model, bool isVirtualMachine, string ip, string description, string location, string cpu, string ram, string storage, string macaddress, string os, string sitecode)
         {
             var updated = new Devices
             {
                 Hostname = hostname,
+                SiteCode = sitecode,
                 SerialNumber = serialNumber,
                 Model = model,
                 isVirtualMachine = isVirtualMachine,

@@ -14,5 +14,6 @@
         public string Storage { get; set; } = "";
         public string MACAddress { get; set; } = "";
         public string OS { get; set; } = "";
+        public string SiteCode { get; set; } = "";
     }
 }

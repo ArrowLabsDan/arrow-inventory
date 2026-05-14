@@ -44,6 +44,7 @@ namespace ArrowInventory.Services
             if(existing != null)
             {
                 existing.SerialNumber = updated.SerialNumber;
+                existing.SiteCode = updated.SiteCode;
                 existing.Model = updated.Model;
                 existing.isVirtualMachine = updated.isVirtualMachine;
                 existing.IP = updated.IP;

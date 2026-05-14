@@ -1,19 +1,5 @@
 [
   {
-    "Hostname": "ARWLABHPV01",
-    "SerialNumber": "8CC44227P0",
-    "Model": "HP Pro Mini 400 G9 Desktop PC",
-    "isVirtualMachine": false,
-    "IP": "192.168.1.49",
-    "description": "Hypervisor 01 - Core SCCM Infra \u002B Domain Controller",
-    "location": "Office",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": ""
-  },
-  {
     "Hostname": "ARWLABHPV02",
     "SerialNumber": "8CC4301RNN",
     "Model": "HP Pro Mini 400 G9 Desktop PC",
@@ -21,11 +7,12 @@
     "IP": "192.168.1.50",
     "description": "Hypervisor 02 - Secondary Site Server \u002B Test Devices",
     "location": "Office",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": ""
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "409"
   },
   {
     "Hostname": "ARWLABHPV03",
@@ -39,7 +26,8 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
   },
   {
     "Hostname": "ARWLAB-CASSRV01",
@@ -53,7 +41,8 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
   },
   {
     "Hostname": "ARWLABDC01",
@@ -67,7 +56,8 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
   },
   {
     "Hostname": "ARWLAB-PRISRV01",
@@ -81,7 +71,8 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
   },
   {
     "Hostname": "ARWLAB-SECSRV02",
@@ -95,7 +86,8 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
   },
   {
     "Hostname": "ARWLABPS01",
@@ -109,6 +101,22 @@
     "RAM": "",
     "Storage": "",
     "MACAddress": "",
-    "OS": ""
+    "OS": "",
+    "SiteCode": ""
+  },
+  {
+    "Hostname": "ARWLABHPV01",
+    "SerialNumber": "8CC44227P0",
+    "Model": "HP Pro Mini 400 G9 Desktop PC",
+    "isVirtualMachine": false,
+    "IP": "192.168.1.49",
+    "description": "Hypervisor 01 - Core SCCM Infra \u002B Domain Controller",
+    "location": "Office",
+    "CPU": null,
+    "RAM": "32GB",
+    "Storage": "2TB",
+    "MACAddress": null,
+    "OS": "Windows Server 2022",
+    "SiteCode": "409"
   }
 ]

@@ -1,0 +1,40 @@
+﻿@page
+@model ArrowInventory.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin Page";
+}
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+</div>
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
+{
+    <div class="alert alert-@Model.StatusType">
+        @Model.StatusMessage
+
+    </div>
+}
+
+<form method="post">
+
+    <div class="mb-3">
+        <label>Site Name</label>
+
+        <input asp-for="SiteName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Site Code</label>
+
+        <input asp-for="SiteCode" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+
+    <button type="reset" class="btn btn-secondary">
+        Clear
+    </button>
+
+
+</form>

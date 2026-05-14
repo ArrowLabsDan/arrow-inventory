@@ -9,6 +9,7 @@ namespace ArrowInventory.Pages
     {
 
         private readonly DeviceService _deviceService;
+        private readonly SiteService _siteService;
 
         // Form fields
         [BindProperty]
@@ -36,17 +37,32 @@ namespace ArrowInventory.Pages
         [BindProperty]
         public string OS { get; set; } = "";
 
+        // Drop down for Sites
+        public List<Sites> Sites { get; set; } = [];
+
+        [BindProperty]
+        public string SiteCode { get; set; } = "";
+
         // UI Feedback properties
         public string StatusMessage { get; set; } = "";
         public string StatusType { get; set; } = "";
 
-        public AddDevicesModel(DeviceService deviceService)
+        public AddDevicesModel(DeviceService deviceService, SiteService siteService)
         {
             _deviceService = deviceService;
+            _siteService = siteService;
+            
+        }
+
+        public void OnGet()
+        {
+            Sites = _siteService.GetSites();
         }
 
         public void OnPost()
         {
+
+            Sites = _siteService.GetSites();
 
             if (string.IsNullOrWhiteSpace(Hostname))
             {
@@ -72,6 +88,7 @@ namespace ArrowInventory.Pages
             devices.Add(new Devices
             {
                 Hostname = Hostname,
+                SiteCode = SiteCode,
                 SerialNumber = SerialNumber,
                 Model = Model,
                 IP = IP,
@@ -107,6 +124,7 @@ namespace ArrowInventory.Pages
             Storage = "";
             MACAddress = "";
             OS = "";
+            SiteCode = "";
 
         }
     }

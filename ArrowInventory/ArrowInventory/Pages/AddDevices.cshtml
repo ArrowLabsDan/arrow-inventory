@@ -26,6 +26,17 @@
     </div>
 
     <div class="mb-3">
+        <label>Site</label>
+        <select asp-for="SiteCode" class="form-select">
+            <option value="">-- Select Site --</option>
+            @foreach (var site in Model.Sites)
+                    {
+                        <option value="@site.SiteCode">@site.SiteName (@site.SiteCode)</option>
+                    }
+        </select>
+    </div>
+
+    <div class="mb-3">
         <label>Serial Number</label>
 
         <input asp-for="SerialNumber" class="form-control" />
