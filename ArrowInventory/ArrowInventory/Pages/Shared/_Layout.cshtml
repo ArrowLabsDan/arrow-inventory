@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ArrowInventory.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <header>
@@ -18,7 +19,7 @@
                     <img src="https://arwlabazblob.blob.core.windows.net/intune-assets/ArrowLabs-Icon.png"
                          alt="ArrowLabs Logo"
                          width="50"
-                         hight="50"
+                         height="50"
                          class="me-2"
                          />                
                     
@@ -60,10 +61,12 @@
     <footer class="border-top footer text-muted">
         <div class="container d-flex justify-content-between align-items-center">
             <span>
-            &copy; 2026 - ArrowStudio - Support@ArrowStudio.co.uk <a asp-area="" asp-page="/Privacy">Privacy</a>
+                &copy; 2026 - ArrowStudio - Support@ArrowStudio.co.uk <a asp-area="" asp-page="/Privacy">Privacy</a>
             </span>
-                <button class="btn btn-outline-secondary btn-sm align-content-end" id="themeToggle">
-                    Toggle Theme
+                <button class="btn btn-lg" id="themeToggle">
+                    <span class="material-symbols-outlined" id="themeIcon">
+                        toggle_off
+                    </span>
                 </button>
         </div>
 
@@ -79,18 +82,21 @@
 
     <script>
         const toggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
 
         toggleBtn.addEventListener('click', () => {
             const html = document.documentElement;
             const current = html.getAttribute('data-bs-theme');
             const next = current == 'dark' ? 'light' : 'dark';
             html.setAttribute('data-bs-theme', next);
+            themeIcon.textContent = next == 'dark' ? 'toggle_on' : 'toggle_off';
             localStorage.setItem('theme', next);
         });
 
         const saved = localStorage.getItem('theme');
         if(saved){
             document.documentElement.setAttribute('data-bs-theme', saved);
+                themeIcon.textContent = saved == 'dark' ? 'toggle_on' : 'toggle_off';
         }
     </script>
 

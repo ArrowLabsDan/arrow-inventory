@@ -21,7 +21,7 @@ namespace ArrowInventory.Pages
         [BindProperty]
         public bool isVirtualMachine { get; set; } = false;
         [BindProperty]
-        public string IP { get; set; } = "0.0.0.0";
+        public string IP { get; set; } = "";
         [BindProperty]
         public string description { get; set; } = "";
         [BindProperty]
@@ -123,7 +123,7 @@ namespace ArrowInventory.Pages
             SerialNumber = "";
             Model = "";
             isVirtualMachine = false;
-            IP = "0.0.0.0";
+            IP = "";
             CPU = "";
             RAM = "";
             Storage = "";

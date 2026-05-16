@@ -54,14 +54,14 @@ namespace ArrowInventory.Pages
            
             if (Sites.Any(x => x.SiteName.ToLower() == SiteName.ToLower()))
             {
-                StatusMessage = $"{SiteName} already exitst";
+                StatusMessage = $"{SiteName} already exitst under sites";
                 StatusType = "warning";
                 return;
             }
 
             if (Sites.Any(x => x.SiteCode.ToLower() == SiteCode.ToLower()))
             {
-                StatusMessage = $"{SiteCode} already exitst";
+                StatusMessage = $"{SiteCode} already exitst under sites";
                 StatusType = "warning";
                 return;
             }

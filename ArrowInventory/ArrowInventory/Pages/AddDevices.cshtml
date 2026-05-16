@@ -37,9 +37,9 @@
     </div>
 
     <div class="mb-3">
-        <label>Serial Number <span class="text-danger">*Required if not a VM*</span></label>
+        <label>Serial Number <span class="text-danger">*</span></label>
 
-        <input asp-for="SerialNumber" class="form-control" />
+        <input asp-for="SerialNumber" class="form-control" placeholder="Required if not a VM" />
     </div>
 
     <div class="mb-3">
@@ -51,7 +51,7 @@
     <div class="mb-3">
         <label>IP Address</label>
 
-        <input asp-for="IP" class="form-control"/>
+        <input asp-for="IP" class="form-control" placeholder="0.0.0.0"/>
     </div>
 
     <div class="mb-3">

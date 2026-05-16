@@ -6,7 +6,7 @@
         public string SerialNumber { get; set; } = "";
         public string Model { get; set; } = "";
         public bool isVirtualMachine { get; set; } = false;
-        public string IP { get; set; } = "0.0.0.0";
+        public string IP { get; set; } = "";
         public string description { get; set; } = "";
         public string location { get; set; } = "";
         public string CPU { get; set; } = "";

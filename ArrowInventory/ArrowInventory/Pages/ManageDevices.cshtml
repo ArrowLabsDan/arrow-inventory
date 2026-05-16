@@ -1,18 +1,5 @@
 ﻿@page
 @model ManageDevicesModel
-<!--
-
-@{
-    ViewData["Title"] = "Manage Devices";
-}
-
-<div class="text-center">
-    <h1>@ViewData["Title"]</h1>
-    <p>Search Hostname:</p>
-</div>
-
--->
-
 
 <div class="d-flex justify-content-between align-items-center mb-4">
 
@@ -62,109 +49,112 @@
     </div>
 </div>
 
-
-
 <div class="card-body p-0">
-<div class="card bg-body-tertiary border-secondary mb-4">
-        <div class="form-outline" data-mdb-input-init>
-            <input type="search" id="form1" class="form-control" placeholder="Search Hostname" aria-label="Search" />
-        </div>
-        <table class="table table-bordered table-hover mb-0 text-center align-middle">
-            <thead>
-                <tr>
-                    <th>Hostname</th>
-                    <th>Site Code</th>
-                    <th>Serial Number</th>
-                    <th>Model</th>
-                    <th>IPV4</th>
-                    <th>MAC Address</th>
-                    <th>Virtual Machine</th>
-                    <th>Location</th>
-                    <th>CPU</th>
-                    <th>RAM</th>
-                    <th>Storage</th>
-                    <th>Operating System</th>
-                    <th>Description</th>
-                    <th class="text-center">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var device in Model.Devices)
-                {
-                    <tr class="clickable-row" style="cursor:pointer"
-                        data-hostname="@device.Hostname"
-                        data-sitecode="@device.SiteCode"
-                        data-serial="@device.SerialNumber"
-                        data-model="@device.Model"
-                        data-ip="@device.IP"
-                        data-vm="@device.isVirtualMachine"
-                        data-location="@device.location"
-                        data-description="@device.description"
-                        data-cpu="@device.CPU"
-                        data-ram="@device.RAM"
-                        data-storage="@device.Storage"
-                        data-os="@device.OS"
-                        data-macaddress="@device.MACAddress"
-                    >
-                        <td>@device.Hostname</td>
-                        <td>@device.SiteCode</td>
-                        <td>@device.SerialNumber</td>
-                        <td>@device.Model</td>
-                        <td>@device.IP</td>
-                        <td>@device.MACAddress</td>
-                        <td>@device.isVirtualMachine</td>
-                        <td>@device.location</td>
-                        <td>@device.CPU</td>
-                        <td>@device.RAM</td>
-                        <td>@device.Storage</td>
-                        <td>@device.OS</td>
-
-                        <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
-                            @device.description</td>
-
-                        <td class="text-center">
-                            <div class="dropdown">
-                                <button class="btn btn-sm"
-                                type="button"
-                                data-bs-toggle="dropdown"
-                                onclick="event.stopPropagation()">
-                                    ⋮
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <button class="dropdown-item text-danger edit-btn"
-                                        type="button"
-                                        onclick="event.stopPropagation()">
-                                    Edit
-                                </button>
-                                    </li>
-                                    <li>
-                                        <form method="post" asp-page-handler="Delete">
-                                            <input type="hidden"
-                                                name="hostname"
-                                                value="@device.Hostname" />
-                                            <button type="submit"
-                                                    class="dropdown-item text-danger"
-                                                    onclick="event.stopPropagation()">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>
-                }
-                @if (!Model.Devices.Any())
-                {
+    <div class="card bg-body-tertiary border-secondary mb-4">
+            <div class="form-outline" data-mdb-input-init>
+                <input type="search" id="form1" class="form-control" placeholder="Search Hostname" aria-label="Search" />
+            </div>
+    </div>
+        <div class="table-responsive"> 
+            <table class="table table-bordered table-striped table-hover mb-0 text-center align-middle">
+                <thead>
                     <tr>
-                        <td colspan="5" class="text-center text-secondary align-middle">
-                            No Devices Found
-                        </td>
+                        <th>Hostname</th>
+                        <th>Site Code</th>
+                        <th>Serial Number</th>
+                        <th>Model</th>
+                        <th>IPV4</th>
+                        <th>MAC Address</th>
+                        <th>Virtual Machine</th>
+                        <th>Location</th>
+                        <th>CPU</th>
+                        <th>RAM</th>
+                        <th>Storage</th>
+                        <th>Operating System</th>
+                        <th>Description</th>
+                        <th class="text-center">Actions</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var device in Model.Devices)
+                    {
+                        <tr class="clickable-row" style="cursor:pointer"
+                            data-hostname="@device.Hostname"
+                            data-sitecode="@device.SiteCode"
+                            data-serial="@device.SerialNumber"
+                            data-model="@device.Model"
+                            data-ip="@device.IP"
+                            data-vm="@device.isVirtualMachine"
+                            data-location="@device.location"
+                            data-description="@device.description"
+                            data-cpu="@device.CPU"
+                            data-ram="@device.RAM"
+                            data-storage="@device.Storage"
+                            data-os="@device.OS"
+                            data-macaddress="@device.MACAddress"
+                        >
+                            <td>@device.Hostname</td>
+                            <td>@device.SiteCode</td>
+                            <td>@device.SerialNumber</td>
+                            <td>@device.Model</td>
+                            <td>@device.IP</td>
+                            <td>@device.MACAddress</td>
+                            <td>@device.isVirtualMachine</td>
+                            <td>@device.location</td>
+                            <td>@device.CPU</td>
+                            <td>@device.RAM</td>
+                            <td>@device.Storage</td>
+                            <td>@device.OS</td>
+
+                            <td style="max-width:150px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+                                @device.description</td>
+
+                            <td class="text-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-sm"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    onclick="event.stopPropagation()">
+                                        <span class="material-symbols-outlined">
+                                            edit
+                                        </span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <button class="dropdown-item text-danger edit-btn"
+                                            type="button"
+                                            onclick="event.stopPropagation()">
+                                        Edit
+                                    </button>
+                                        </li>
+                                        <li>
+                                            <form method="post" asp-page-handler="Delete">
+                                                <input type="hidden"
+                                                    name="hostname"
+                                                    value="@device.Hostname" />
+                                                <button type="submit"
+                                                        class="dropdown-item text-danger"
+                                                        onclick="event.stopPropagation()">
+                                                    Delete
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    @if (!Model.Devices.Any())
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-secondary align-middle">
+                                No Devices Found
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 <div class="modal fade" id="deviceModal" tabindex="-1">
@@ -256,7 +246,7 @@
                         </dd>
 
                         <dt class="col-sm-4">Description</dt>
-                        <dd class="col-sm-8">
+                        <dd class="col-sm-8" style="word-break: break-word;">
                             <span class="view-mode" id="modalDescription"></span>
                             <textarea class="form-control edit-mode d-none" name="description" id="editDescription" rows="3"></textarea>
                         </dd>
