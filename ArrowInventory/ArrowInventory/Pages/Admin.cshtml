@@ -13,28 +13,62 @@
 
     </div>
 }
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <form method="post">
 
-<form method="post">
+        <div class="mb-3">
+            <label>Site Name</label>
 
-    <div class="mb-3">
-        <label>Site Name</label>
+            <input asp-for="SiteName" class="form-control" />
+        </div>
 
-        <input asp-for="SiteName" class="form-control" />
-    </div>
+        <div class="mb-3">
+            <label>Site Code</label>
 
-    <div class="mb-3">
-        <label>Site Code</label>
+            <input asp-for="SiteCode" class="form-control" />
+        </div>
 
-        <input asp-for="SiteCode" class="form-control" />
-    </div>
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
 
-    <button type="submit" class="btn btn-primary">
-        Submit
-    </button>
+        <button type="reset" class="btn btn-secondary">
+            Clear
+        </button>
 
-    <button type="reset" class="btn btn-secondary">
-        Clear
-    </button>
+    </form>
+</div>
 
+<div class="mb-3">
+    <table class="table table-bordered table-hover mb-0 text-center align-middle">
+        <thead>
+            <tr>
+                <th>Site Name</th>
+                <th>Site Code</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var site in Model.Sites)
+            {
+                <tr>
+                <td>@site.SiteName</td>
+                <td>@site.SiteCode</td>
+                    <td class="text-center">
+                        <form method="post" asp-page-handler="Delete">
+                                <input type="hidden"
+                                        name="sitecode"
+                                        value="@site.SiteCode" />
+                            <button type="submit"
+                                    class="dropdown-item text-danger"
+                                    onclick="event.stopPropagation()">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
-</form>

@@ -63,14 +63,30 @@ namespace ArrowInventory.Pages
         {
 
             Sites = _siteService.GetSites();
+            var devices = _deviceService.GetDevices();
 
+            // Validates if hostname is empty
             if (string.IsNullOrWhiteSpace(Hostname))
             {
                 StatusMessage = "Hostname Cannot be empty";
                 StatusType = "danger";
                 return;
             }
-
+            // Validates if hostname already exists in inventory
+            if (devices.Any(x => x.Hostname.ToLower() == Hostname.ToLower()))
+            {
+                StatusMessage = $"{Hostname} already exitst in the inventory";
+                StatusType = "warning";
+                return;
+            }
+            // Validates if site code is empty
+            if (string.IsNullOrWhiteSpace(SiteCode))
+            {
+                StatusMessage = "Site must be selected";
+                StatusType = "danger";
+                return;
+            }
+            // Validates if Serial number is empty on physical devices
             if (isVirtualMachine == false && string.IsNullOrWhiteSpace(SerialNumber))
             {
                 StatusMessage = "Serial Number cannot be empty for physical devices";
@@ -78,13 +94,6 @@ namespace ArrowInventory.Pages
                 return;
             }
 
-            var devices = _deviceService.GetDevices();
-            if (devices.Any(x => x.Hostname.ToLower() == Hostname.ToLower()))
-            {
-                StatusMessage = $"{Hostname} already exitst in the inventory";
-                StatusType = "warning";
-                return;
-            }
             devices.Add(new Devices
             {
                 Hostname = Hostname,
@@ -102,10 +111,6 @@ namespace ArrowInventory.Pages
                 OS = OS
 
             });
-
-            Console.WriteLine($"Hostname: {Hostname}");
-            Console.WriteLine($"Serial: {SerialNumber}");
-            Console.WriteLine($"Model: {Model}");
 
             _deviceService.SaveDevices(devices);
 

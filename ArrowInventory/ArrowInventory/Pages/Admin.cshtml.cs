@@ -54,14 +54,14 @@ namespace ArrowInventory.Pages
            
             if (Sites.Any(x => x.SiteName.ToLower() == SiteName.ToLower()))
             {
-                StatusMessage = $"{SiteName} already exitst in the inventory";
+                StatusMessage = $"{SiteName} already exitst";
                 StatusType = "warning";
                 return;
             }
 
             if (Sites.Any(x => x.SiteCode.ToLower() == SiteCode.ToLower()))
             {
-                StatusMessage = $"{SiteCode} already exitst in the inventory";
+                StatusMessage = $"{SiteCode} already exitst";
                 StatusType = "warning";
                 return;
             }
@@ -87,6 +87,13 @@ namespace ArrowInventory.Pages
 
 
 
+        }
+
+
+        public IActionResult OnPostDelete(string siteCode)
+        {
+            _siteService.DeleteSite(siteCode);
+            return RedirectToPage();
         }
 
     }

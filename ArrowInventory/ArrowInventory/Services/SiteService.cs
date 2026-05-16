@@ -24,5 +24,17 @@ namespace ArrowInventory.Services
             File.WriteAllText(_filepath, json);
         }
 
+        public void DeleteSite(string siteCode)
+        {
+            var sites = GetSites();
+            var siteToRemove = sites.FirstOrDefault(x => x.SiteCode.ToLower() == siteCode.ToLower());
+
+            if (siteToRemove != null)
+            {
+                sites.Remove(siteToRemove);
+                SaveSites(sites);
+            }
+        }
+
     }
 }
