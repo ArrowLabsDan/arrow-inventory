@@ -20,13 +20,13 @@
 <form method="post">
 
     <div class="mb-3">
-        <label>Hostname</label>
+        <label>Hostname<span class="text-danger">*</span></label>
 
         <input asp-for="Hostname" class="form-control" />
     </div>
 
     <div class="mb-3">
-        <label>Site</label>
+        <label>Site<span class="text-danger">*</span></label>
         <select asp-for="SiteCode" class="form-select">
             <option value="">-- Select Site --</option>
             @foreach (var site in Model.Sites)
@@ -37,7 +37,7 @@
     </div>
 
     <div class="mb-3">
-        <label>Serial Number</label>
+        <label>Serial Number <span class="text-danger">*Required if not a VM*</span></label>
 
         <input asp-for="SerialNumber" class="form-control" />
     </div>
