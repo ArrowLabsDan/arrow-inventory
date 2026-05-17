@@ -4,3 +4,5 @@
 
 /ArrowInventory/.vs/ArrowInventory.slnx/FileContentIndex/c55d9b9a-de39-421f-87f1-9995c74eecdc.vsidx
 *.vsidx
+/ArrowInventory/ArrowInventory/Data/Devices.json
+/ArrowInventory/ArrowInventory/Data/Sites.json
