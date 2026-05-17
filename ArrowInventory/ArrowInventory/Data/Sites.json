@@ -2,5 +2,9 @@
   {
     "SiteName": "Coventry",
     "SiteCode": "409"
+  },
+  {
+    "SiteName": "Wrexham",
+    "SiteCode": "123"
   }
 ]

@@ -7,12 +7,12 @@
     "IP": "192.168.1.40",
     "description": "Domain Controller",
     "location": "ARWLABHPV01",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": "",
-    "SiteCode": ""
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "123"
   },
   {
     "Hostname": "ARWLAB-PRISRV01",
@@ -22,12 +22,12 @@
     "IP": " 192.168.1.55",
     "description": "SCCM Primary Site Server",
     "location": "ARWLABHPV01",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": "",
-    "SiteCode": ""
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "409"
   },
   {
     "Hostname": "ARWLAB-SECSRV02",
@@ -37,12 +37,12 @@
     "IP": "192.168.1.66",
     "description": "SCCM Secondary Site Server",
     "location": "ARWLABHPV02",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": "",
-    "SiteCode": ""
+    "CPU": "A",
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "409"
   },
   {
     "Hostname": "ARWLABPS01",
@@ -52,12 +52,12 @@
     "IP": "192.168.1.42",
     "description": "Package Source",
     "location": "ARWLABHPV01",
-    "CPU": "",
-    "RAM": "",
-    "Storage": "",
-    "MACAddress": "",
-    "OS": "",
-    "SiteCode": ""
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "409"
   },
   {
     "Hostname": "ARWLABHPV01",
@@ -73,5 +73,50 @@
     "MACAddress": null,
     "OS": "Windows Server 2022",
     "SiteCode": "409"
+  },
+  {
+    "Hostname": "za123",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": null,
+    "description": null,
+    "location": null,
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "409"
+  },
+  {
+    "Hostname": "abc123",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": null,
+    "description": null,
+    "location": null,
+    "CPU": "Z",
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": "A",
+    "OS": null,
+    "SiteCode": "409"
+  },
+  {
+    "Hostname": "wrexham",
+    "SerialNumber": null,
+    "Model": null,
+    "isVirtualMachine": true,
+    "IP": null,
+    "description": null,
+    "location": null,
+    "CPU": null,
+    "RAM": null,
+    "Storage": null,
+    "MACAddress": null,
+    "OS": null,
+    "SiteCode": "123"
   }
 ]

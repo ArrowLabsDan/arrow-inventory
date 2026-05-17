@@ -59,19 +59,19 @@
             <table class="table table-bordered table-striped table-hover mb-0 text-center align-middle">
                 <thead>
                     <tr>
-                        <th>Hostname</th>
-                        <th>Site Code</th>
-                        <th>Serial Number</th>
-                        <th>Model</th>
-                        <th>IPV4</th>
-                        <th>MAC Address</th>
-                        <th>Virtual Machine</th>
-                        <th>Location</th>
-                        <th>CPU</th>
-                        <th>RAM</th>
-                        <th>Storage</th>
-                        <th>Operating System</th>
-                        <th>Description</th>
+                        <th data-sort="hostname" style="cursor:pointer;">Hostname ↕</th>
+                        <th data-sort="sitecode" style="cursor:pointer;">Site Code ↕</th>
+                        <th data-sort="serial" style="cursor:pointer;">Serial Number ↕</th>
+                        <th data-sort="model" style="cursor:pointer;">Model ↕</th>
+                        <th data-sort="ip" style="cursor:pointer;">IPV4 ↕</th>
+                        <th data-sort="macaddress" style="cursor:pointer;">MAC Address ↕</th>
+                        <th data-sort="vm" style="cursor:pointer;">Virtual Machine ↕</th>
+                        <th data-sort="location" style="cursor:pointer;">Location ↕</th>
+                        <th data-sort="cpu" style="cursor:pointer;">CPU ↕</th>
+                        <th data-sort="ram" style="cursor:pointer;">RAM ↕</th>
+                        <th data-sort="storage" style="cursor:pointer;">Storage ↕</th>
+                        <th data-sort="os" style="cursor:pointer;">Operating System ↕</th>
+                        <th data-sort="description" style="cursor:pointer;">Description ↕</th>
                         <th class="text-center">Actions</th>
                     </tr>
                 </thead>
@@ -295,7 +295,28 @@
            }
            )});
 
+           //Sort by ABC/ZYX -- This will all be replaced with a generic sort feature -- WIP
+
+        const sortState = {};
        
+        document.querySelectorAll('th[data-sort]').forEach(th => {
+            th.addEventListener('click', function () {
+                const key = this.dataset.sort;
+                sortState[key] = !sortState[key];
+
+                const tbody = document.querySelector('tbody');
+                const rows = Array.from(document.querySelectorAll('.clickable-row'));
+
+                rows.sort((a, b) => {
+                    const valA = (a.dataset[key] || '').toLowerCase();
+                    const valB = (b.dataset[key] || '').toLowerCase();
+                    return sortState[key] ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                });
+
+                rows.forEach(row => tbody.appendChild(row));
+            });
+        });
+
 
         function populateModal(row, editMode) {
             // Populate view spans
