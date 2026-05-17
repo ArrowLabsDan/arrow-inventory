@@ -56,23 +56,49 @@
             </div>
     </div>
         <div class="table-responsive"> 
-            <table class="table table-bordered table-striped table-hover mb-0 text-center align-middle">
+            <table class="table table-bordered table-striped table-hover mb-0 text-center align-middle" style="table-layout: fixed; min-width: 1600px;">
                 <thead>
                     <tr>
-                        <th data-sort="hostname" style="cursor:pointer;">Hostname ↕</th>
-                        <th data-sort="sitecode" style="cursor:pointer;">Site Code ↕</th>
-                        <th data-sort="serial" style="cursor:pointer;">Serial Number ↕</th>
-                        <th data-sort="model" style="cursor:pointer;">Model ↕</th>
-                        <th data-sort="ip" style="cursor:pointer;">IPV4 ↕</th>
-                        <th data-sort="macaddress" style="cursor:pointer;">MAC Address ↕</th>
-                        <th data-sort="vm" style="cursor:pointer;">Virtual Machine ↕</th>
-                        <th data-sort="location" style="cursor:pointer;">Location ↕</th>
-                        <th data-sort="cpu" style="cursor:pointer;">CPU ↕</th>
-                        <th data-sort="ram" style="cursor:pointer;">RAM ↕</th>
-                        <th data-sort="storage" style="cursor:pointer;">Storage ↕</th>
-                        <th data-sort="os" style="cursor:pointer;">Operating System ↕</th>
-                        <th data-sort="description" style="cursor:pointer;">Description ↕</th>
-                        <th class="text-center">Actions</th>
+                    <th data-sort="hostname" class="sortable-th">Hostname
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="sitecode" class="sortable-th">Site Code
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="serial" class="sortable-th">Serial Number
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="model" class="sortable-th">Model
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="ip" class="sortable-th">IPV4
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="macaddress" class="sortable-th">MAC Address
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="vm" class="sortable-th">Virtual Machine
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="location" class="sortable-th">Location
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="cpu" class="sortable-th">CPU
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="ram" class="sortable-th">RAM 
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="storage" class="sortable-th">Storage 
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="os" class="sortable-th">Operating System 
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th data-sort="description" class="sortable-th">Description
+                            <span class="material-symbols-outlined sortable-icon">swap_vert</span></th>
+
+                    <th class="text-center" style="width: 120px;">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -155,7 +181,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 </div>
 <div class="modal fade" id="deviceModal" tabindex="-1">
     <div class="modal-dialog">
@@ -295,7 +320,7 @@
            }
            )});
 
-           //Sort by ABC/ZYX -- This will all be replaced with a generic sort feature -- WIP
+           //Sort by ABC/ZYX 
 
         const sortState = {};
        
@@ -319,6 +344,7 @@
 
 
         function populateModal(row, editMode) {
+
             // Populate view spans
             document.getElementById('modalHostname').textContent = row.dataset.hostname;
              document.getElementById('modalSitecode').textContent = row.dataset.sitecode;

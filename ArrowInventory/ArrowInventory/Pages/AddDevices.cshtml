@@ -17,96 +17,100 @@
     </div>
 }
 
-<form method="post">
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="card-body">
+        <div class="row justify-content-before">
+            <div class="col-md-12">
+                <form method="post">
 
-    <div class="mb-3">
-        <label>Hostname<span class="text-danger">*</span></label>
+                    <div class="mb-3">
+                        <label>Hostname<span class="text-danger">*</span></label>
 
-        <input asp-for="Hostname" class="form-control" />
+                        <input asp-for="Hostname" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Site<span class="text-danger">*</span></label>
+                        <select asp-for="SiteCode" class="form-select">
+                            <option value="">-- Select Site --</option>
+                            @foreach (var site in Model.Sites)
+                                    {
+                                        <option value="@site.SiteCode">@site.SiteName (@site.SiteCode)</option>
+                                    }
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Serial Number <span class="text-danger">*</span></label>
+
+                        <input asp-for="SerialNumber" class="form-control" placeholder="Required if not a VM" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Model</label>
+
+                        <input asp-for="Model" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>IP Address</label>
+
+                        <input asp-for="IP" class="form-control" placeholder="0.0.0.0"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>MAC Address</label>
+
+                        <input asp-for="MACAddress" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Virtual Machine</label>
+
+                        <input asp-for="isVirtualMachine" class="form-check"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Location</label>
+
+                        <input asp-for="location" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>CPU</label>
+
+                        <input asp-for="CPU" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>RAM</label>
+
+                        <input asp-for="RAM" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Storage</label>
+
+                        <input asp-for="Storage" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Operating System</label>
+
+                        <input asp-for="OS" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Description</label>
+
+                        <input asp-for="description" class="form-control" />
+                    </div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div class="mb-3">
-        <label>Site<span class="text-danger">*</span></label>
-        <select asp-for="SiteCode" class="form-select">
-            <option value="">-- Select Site --</option>
-            @foreach (var site in Model.Sites)
-                    {
-                        <option value="@site.SiteCode">@site.SiteName (@site.SiteCode)</option>
-                    }
-        </select>
-    </div>
-
-    <div class="mb-3">
-        <label>Serial Number <span class="text-danger">*</span></label>
-
-        <input asp-for="SerialNumber" class="form-control" placeholder="Required if not a VM" />
-    </div>
-
-    <div class="mb-3">
-        <label>Model</label>
-
-        <input asp-for="Model" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>IP Address</label>
-
-        <input asp-for="IP" class="form-control" placeholder="0.0.0.0"/>
-    </div>
-
-    <div class="mb-3">
-        <label>MAC Address</label>
-
-        <input asp-for="MACAddress" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>Virtual Machine</label>
-
-        <input asp-for="isVirtualMachine" class="form-check"/>
-    </div>
-
-    <div class="mb-3">
-        <label>Location</label>
-
-        <input asp-for="location" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>CPU</label>
-
-        <input asp-for="CPU" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>RAM</label>
-
-        <input asp-for="RAM" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>Storage</label>
-
-        <input asp-for="Storage" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>Operating System</label>
-
-        <input asp-for="OS" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label>Description</label>
-
-        <input asp-for="description" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-primary">
-        Submit
-    </button>
-
-    <button type="reset" class="btn btn-secondary">
-        Clear
-    </button>
-</form>
+</div>

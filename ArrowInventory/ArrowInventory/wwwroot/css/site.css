@@ -18,10 +18,18 @@ html {
 }
 
 body {
-    background-color: #121212
-    color; #f8f9fa;
-  margin-bottom: 60px;
+    font-family: "Roboto Slab", serif;
+    color: #223D2C;
+    margin-bottom: 60px;
 }
+
+[data-bs-theme="light"] {
+    --bs-body-bg: #D7CFC5;
+    --bs-body-bg-rgb: 125, 207, 197;
+    --bs-tertiary-bg: #DDD7CE;
+    --bs-tertiary-bg-rgb: 221, 215, 206;
+}
+
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -30,4 +38,17 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+.sortable-th {
+    cursor: pointer;
+    width: 120px;
+    position: relative;
+}
+
+.sortable-icon {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    font-size: 14px;
 }
