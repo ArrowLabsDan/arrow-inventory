@@ -2,9 +2,6 @@ using ArrowInventory.Models;
 using ArrowInventory.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Reflection;
-using System.Runtime.Intrinsics.Arm;
-using Windows.Networking;
 
 namespace ArrowInventory.Pages
 {
@@ -33,40 +30,40 @@ namespace ArrowInventory.Pages
             Sites = _siteService.GetSites();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
             Sites = _siteService.GetSites();
 
             if (string.IsNullOrWhiteSpace(SiteName))
             {
-                StatusMessage = "Site Name Cannot be empty";
-                StatusType = "danger";
-                return;
+                TempData["StatusMessage"] = "Site Name Cannot be empty";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
             }
 
             if (string.IsNullOrWhiteSpace(SiteCode))
             {
-                StatusMessage = "Site Code Cannot be empty";
-                StatusType = "danger";
-                return;
+                TempData["StatusMessage"] = "Site Code Cannot be empty";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
             }
 
            
             if (Sites.Any(x => x.SiteName.ToLower() == SiteName.ToLower()))
             {
-                StatusMessage = $"{SiteName} already exitst under sites";
-                StatusType = "warning";
-                return;
+                TempData["StatusMessage"] = $"{SiteName} already exitst under sites";
+                TempData["StatusType"] = "warning";
+                return RedirectToPage();
             }
 
             if (Sites.Any(x => x.SiteCode.ToLower() == SiteCode.ToLower()))
             {
-                StatusMessage = $"{SiteCode} already exitst under sites";
-                StatusType = "warning";
-                return;
+                TempData["StatusMessage"] = $"SiteCode - {SiteCode} is already in use";
+                TempData["StatusType"] = "warning";
+                return RedirectToPage();
             }
 
-            Sites.Add(new Sites
+            _siteService.AddSite(new Sites
             {
                 SiteName = SiteName,
                 SiteCode = SiteCode
@@ -75,18 +72,13 @@ namespace ArrowInventory.Pages
 
             _siteService.SaveSites(Sites);
 
-           
-
-            StatusMessage = $"{SiteName} ({SiteCode}) added successfully";
-            StatusType = "success";
-
-            // Clear UI state + reset form
-            ModelState.Clear();
-            SiteCode = "";
-            SiteName = "";
 
 
+            TempData["StatusMessage"] = $"{SiteName} ({SiteCode}) added successfully";
+            TempData["StatusType"] = "success";
 
+
+            return RedirectToPage();
         }
 
 

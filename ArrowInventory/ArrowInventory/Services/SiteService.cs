@@ -1,38 +1,41 @@
 ﻿using ArrowInventory.Models;
-using System.Text.Json;
+using ArrowInventory.Data;
 
 namespace ArrowInventory.Services
 {
     public class SiteService
     {
 
-        private readonly string _filepath = "Data/sites.json";
+        private readonly AppDbContext _context;
+
+        public SiteService(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public void AddSite(Sites site)
+        {
+            _context.Sites.Add(site);
+            _context.SaveChanges();
+        }
 
         public List<Sites> GetSites()
         {
-            var json = File.ReadAllText(_filepath);
-            return JsonSerializer.Deserialize<List<Sites>> (json)
-                ?? new List<Sites>();
+            return _context.Sites.ToList();
         }
+
         public void SaveSites(List<Sites> sites)
         {
-            var json = JsonSerializer.Serialize(sites, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
 
-            File.WriteAllText(_filepath, json);
         }
 
         public void DeleteSite(string siteCode)
         {
-            var sites = GetSites();
-            var siteToRemove = sites.FirstOrDefault(x => x.SiteCode.ToLower() == siteCode.ToLower());
-
-            if (siteToRemove != null)
+            var sites = _context.Sites.Find(siteCode);
+            if (sites != null)
             {
-                sites.Remove(siteToRemove);
-                SaveSites(sites);
+                _context.Sites.Remove(sites);
+                _context.SaveChanges();
             }
         }
 

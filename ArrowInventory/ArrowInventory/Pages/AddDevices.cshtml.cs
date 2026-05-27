@@ -59,7 +59,7 @@ namespace ArrowInventory.Pages
             Sites = _siteService.GetSites();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
 
             Sites = _siteService.GetSites();
@@ -68,33 +68,33 @@ namespace ArrowInventory.Pages
             // Validates if hostname is empty
             if (string.IsNullOrWhiteSpace(Hostname))
             {
-                StatusMessage = "Hostname Cannot be empty";
-                StatusType = "danger";
-                return;
+                TempData["StatusMessage"] = "Hostname Cannot be empty";
+                TempData["StatusType"] = "danger";
+                return Page();
             }
             // Validates if hostname already exists in inventory
             if (devices.Any(x => x.Hostname.ToLower() == Hostname.ToLower()))
             {
-                StatusMessage = $"{Hostname} already exitst in the inventory";
-                StatusType = "warning";
-                return;
+                TempData["StatusMessage"] = $"{Hostname} already exitst in the inventory";
+                TempData["StatusType"] = "warning";
+                return Page();
             }
             // Validates if site code is empty
             if (string.IsNullOrWhiteSpace(SiteCode))
             {
-                StatusMessage = "Site must be selected";
-                StatusType = "danger";
-                return;
+                TempData["StatusMessage"] = "Site must be selected";
+                TempData["StatusType"] = "danger";
+                return Page();
             }
             // Validates if Serial number is empty on physical devices
             if (isVirtualMachine == false && string.IsNullOrWhiteSpace(SerialNumber))
             {
-                StatusMessage = "Serial Number cannot be empty for physical devices";
-                StatusType = "danger";
-                return;
+                TempData["StatusMessage"] = "Serial Number cannot be empty for physical devices";
+                TempData["StatusType"] = "danger";
+                return Page();
             }
 
-            devices.Add(new Devices
+            _deviceService.AddDevice(new Devices
             {
                 Hostname = Hostname,
                 SiteCode = SiteCode,
@@ -112,24 +112,10 @@ namespace ArrowInventory.Pages
 
             });
 
-            _deviceService.SaveDevices(devices);
+            TempData["StatusMessage"] = $"{Hostname} added successfully";
+            TempData["StatusType"] = "success";
 
-            StatusMessage = $"{Hostname} added successfully";
-            StatusType = "success";
-
-            // Clear UI state + reset form
-            ModelState.Clear();
-            Hostname = "";
-            SerialNumber = "";
-            Model = "";
-            isVirtualMachine = false;
-            IP = "";
-            CPU = "";
-            RAM = "";
-            Storage = "";
-            MACAddress = "";
-            OS = "";
-            SiteCode = "";
+            return RedirectToPage();
 
         }
     }

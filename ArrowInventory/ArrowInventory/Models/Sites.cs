@@ -1,8 +1,12 @@
-﻿namespace ArrowInventory.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ArrowInventory.Models
 {
     public class Sites
     {
-        public string SiteName { get; set; } = "";
+        [Key]
         public string SiteCode { get; set; } = "";
+        public string SiteName { get; set; } = "";
+
     }
 }

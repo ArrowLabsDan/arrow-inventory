@@ -1,47 +1,40 @@
 ﻿using ArrowInventory.Models;
-using System.Text.Json;
+using ArrowInventory.Data;
+
 
 
 namespace ArrowInventory.Services
 {
     public class DeviceService
     {
-        private readonly string _filePath = "Data/devices.json";
+
+        private readonly AppDbContext _context;
+
+        public DeviceService(AppDbContext context)
+        {
+            _context = context;
+        }
         public List<Devices> GetDevices()
         {
-            var json = File.ReadAllText(_filePath);
-            return JsonSerializer.Deserialize<List<Devices>>(json)
-                ?? new List<Devices>();
+            return _context.Devices.ToList();
         }
         public void SaveDevices(List<Devices> Devices)
         {
-            var json = JsonSerializer.Serialize(Devices, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-
-            File.WriteAllText(_filePath, json);
+        // To be removed once AddDevices is amended
         }
 
-        public void DeleteDevice(string hostname)
+        // Add Devices to table
+        public void AddDevice(Devices device)
         {
-            var devices = GetDevices();
-
-            var deviceToRemove = devices.FirstOrDefault(x => x.Hostname == hostname);
-
-            if (deviceToRemove != null)
-            {
-                devices.Remove(deviceToRemove);
-                SaveDevices(devices);
-            }
+            _context.Devices.Add(device);
+            _context.SaveChanges();
         }
 
+        // Update existing devices in table
         public void UpdateDevices(Devices updated)
         {
-            var devices = GetDevices();
-            var existing = devices.FirstOrDefault(x => x.Hostname == updated.Hostname);
-
-            if(existing != null)
+            var existing = _context.Devices.Find(updated.Hostname);
+            if (existing != null)
             {
                 existing.SerialNumber = updated.SerialNumber;
                 existing.SiteCode = updated.SiteCode;
@@ -55,11 +48,21 @@ namespace ArrowInventory.Services
                 existing.Storage = updated.Storage;
                 existing.MACAddress = updated.MACAddress;
                 existing.OS = updated.OS;
-                SaveDevices(devices);
+                _context.SaveChanges();
             }
         }
 
+        // Deletre devices from table
+        public void DeleteDevice(string hostname)
+        {
+            var device = _context.Devices.Find(hostname);
+            if(device != null)
+            {
+                _context.Devices.Remove(device);
+                _context.SaveChanges();
 
+            }
+        }
 
     }
 }

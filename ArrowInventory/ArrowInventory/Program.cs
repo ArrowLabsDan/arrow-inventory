@@ -1,12 +1,16 @@
+using ArrowInventory.Data;
 using ArrowInventory.Services;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<DeviceService>();
-builder.Services.AddSingleton<SiteService>();
+builder.Services.AddScoped<DeviceService>();
+builder.Services.AddScoped<SiteService>();
+builder.Services.AddDbContext<AppDbContext>(options =>
+options.UseSqlite("Data Source=ArrowInventory.db"));
 
 var app = builder.Build();
 
