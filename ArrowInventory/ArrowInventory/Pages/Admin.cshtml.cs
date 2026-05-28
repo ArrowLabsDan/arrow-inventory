@@ -70,10 +70,6 @@ namespace ArrowInventory.Pages
             });
            
 
-            _siteService.SaveSites(Sites);
-
-
-
             TempData["StatusMessage"] = $"{SiteName} ({SiteCode}) added successfully";
             TempData["StatusType"] = "success";
 

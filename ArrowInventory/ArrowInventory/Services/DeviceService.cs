@@ -18,10 +18,6 @@ namespace ArrowInventory.Services
         {
             return _context.Devices.ToList();
         }
-        public void SaveDevices(List<Devices> Devices)
-        {
-        // To be removed once AddDevices is amended
-        }
 
         // Add Devices to table
         public void AddDevice(Devices device)

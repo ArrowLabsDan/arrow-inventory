@@ -24,11 +24,6 @@ namespace ArrowInventory.Services
             return _context.Sites.ToList();
         }
 
-        public void SaveSites(List<Sites> sites)
-        {
-
-        }
-
         public void DeleteSite(string siteCode)
         {
             var sites = _context.Sites.Find(siteCode);

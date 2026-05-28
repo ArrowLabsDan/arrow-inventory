@@ -7,9 +7,9 @@ namespace ArrowInventory.Models
         [Key]
         public string Hostname { get; set; } = "";
         public string SiteCode { get; set; } = "";
-        public string SerialNumber { get; set; } = "";
         public bool isVirtualMachine { get; set; } = false;
 
+        public string? SerialNumber { get; set; } = "";
         public string? Model { get; set; } = "";
         public string? IP { get; set; } = "";
         public string? description { get; set; } = "";
