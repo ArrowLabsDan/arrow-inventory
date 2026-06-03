@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>@ViewData["Title"] - ArrowInventory</title>
+        <script type="importmap"></script>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="/ArrowInventory.styles.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+
+    </head>
+    <body>
+
+        <div class="d-flex" id="wrapper">
+
+            <div id="sidebar" class="sidebar-expanded">
+                <div class="sidebar-header d-flex align-items-center justify-content-between p-3">
+                    <a asp-page="/Index" class="sidebar-brand d-flex align-items-center text-decoration-none">
+                    <img src="https://arwlabazblob.blob.core.windows.net/intune-assets/ArrowLabs-Icon.png"
+                    alt="ArrowLabs Logo" width="35" height="35" class="me-2" />
+                        </a>
+                        <button id="sidebarToggle" class="btn btn-sm sidebar-toggle-btn">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                </div>
+
+                <hr class="sidebar-divider"/>
+
+                <ul class="nav flex-column px-2">
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" asp-page="/Index">
+                        <span class="material-symbols-outlined sidebar-icon">home</span>
+                        <span class="sidebar-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" asp-page="/AddDevices">
+                        <span class="material-symbols-outlined sidebar-icon">add_circle</span>
+                            <span class="sidebar-text">Add Devices</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" asp-page="/ManageDevices">
+                        <span class="material-symbols-outlined sidebar-icon">devices</span>
+                            <span class="sidebar-text">Manage Devices</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link sidebar-link" asp-page="/Admin">
+                        <span class="material-symbols-outlined sidebar-icon">settings</span>
+                            <span class="sidebar-text">Admin</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="sidebar-footer p-3 mt-auto">
+                    <hr class="sidebar-divider"/>
+                    <button class="btn btn-sm sidebar-link w-100 text-start" id="themeToggle">
+                        <span class="material-symbols-outlined sidebar-icon" id="themeIcon">toggle_off</span>
+                        <span class="sidebar-text">Toggle Theme</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="page-content" class="flex-grow-1">
+                <main class="p-4">
+                    @RenderBody()
+                </main>
+
+                <footer class="border-top footer text-muted p-3">
+                    <span>&copy; 2026 - ArrowStudio - Support@ArrowStudio.co.uk
+                        <a asp-page="/Privacy">Privacy</a>
+                    </span>
+                </footer>
+            </div>
+        </div>
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+
+        // sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('sidebarToggle');
+
+        // Restore sidebar state
+        const savedState = localStorage.getItem('sidebarState');
+        if (savedState === 'collapsed'){
+            sidebar.classList.remove('sidebar-expanded');
+            sidebar.classList.add('sidebar-collapsed');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('sidebar-expanded');
+            sidebar.classList.toggle('sidebar-collapsed');
+            localStorage.setItem('sidebarState', sidebar.classList.contains('sidebar-collapsed') ? 'collapsed' : 'expanded');
+        });
+
+        // Toggle theme
+        const toggleThemeBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+            toggleThemeBtn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            const next = current == 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', next);
+            themeIcon.textContent = next == 'dark' ? 'toggle_on' : 'toggle_off';
+            localStorage.setItem('theme', next);
+        });
+
+        const saved = localStorage.getItem('theme');
+        if(saved){
+            document.documentElement.setAttribute('data-bs-theme', saved);
+                themeIcon.textContent = saved == 'dark' ? 'toggle_on' : 'toggle_off';
+        }
+    </script>
+    </body>
+</html>

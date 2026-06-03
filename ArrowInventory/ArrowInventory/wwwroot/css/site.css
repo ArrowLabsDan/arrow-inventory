@@ -20,8 +20,8 @@ html {
 body {
     font-family: "Roboto Slab", serif;
     color: #223D2C;
-    margin-bottom: 60px;
 }
+
 
 [data-bs-theme="light"] {
     --bs-body-bg: #D7CFC5;
@@ -30,6 +30,16 @@ body {
     --bs-tertiary-bg-rgb: 221, 215, 206;
 }
 
+.navbar {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -60,4 +70,95 @@ body {
 
 #themeIcon {
     font-size: 2rem;
+}
+/* Sidebar layout*/
+
+#wrapper {
+    min-height: 100vh;
+}
+
+#sidebar {
+    min-height: 100vh;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    background: linear-gradient(180deg, rgba(33, 37, 41, 0.95), rgba(50, 55, 60, 0.90));
+    backdrop-filter: blur(12px);
+}
+
+.sidebar-expanded{
+    width: 220px;
+}
+
+.sidebar-collapsed{
+    width: 65px;
+}
+
+.sidebar-collapsed .sidebar-text,
+.sidebar-collapsed .sidebar-brand-text {
+    display: none;
+}
+
+.sidebar-collapsed .sidebar-header{
+    justify-content: center !important;
+}
+
+.sidebar-collapsed .sidebar-brand img{
+    display: none;
+    
+}
+
+.sidebar-link {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    border-radius: 8px;
+    padding: 10px 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-icon{
+    font-size: 22px;
+    min-width: 22px;
+}
+
+.sidebar-brand{
+    color:white;
+}
+
+.sidebar-brand:hover{
+    color: rgba(255,255,255,0.8);
+}
+
+.sidebar-divider{
+    border-color: rgba(255,255,255,0.1);
+}
+
+.sidebar-toggle-btn{
+    color: rgba(255,255,255,0.75);
+    border: none;
+    background: transparent;
+}
+
+.sidebar-toggle-btn:hover{
+    color: white;
+}
+
+.sidebar-footer{
+    margin-top: auto;
+}
+
+#page-content{
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#page-content main{
+    flex: 1;
 }
