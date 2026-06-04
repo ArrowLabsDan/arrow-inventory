@@ -59,6 +59,8 @@
                     }
 
                 </ul>
+
+
                 
                 <div class="sidebar-footer p-3 mt-auto">
                     <hr class="sidebar-divider"/>
@@ -66,6 +68,14 @@
                         <span class="material-symbols-outlined sidebar-icon" id="themeIcon">toggle_off</span>
                         <span class="sidebar-text">Toggle Theme</span>
                     </button>
+
+                    <form method="post" asp-area="Identiity" asp-page="/Account/Logout" asp-route-returnURL="/">
+                        <button type="submit" class="btn btn-sm sidebar-link w-100 text-start">
+                        <span class="material-symbols-outlined">logout</span>
+                            Logout
+                        </button>
+                    </form>
+
                 </div>
             </div>
 
