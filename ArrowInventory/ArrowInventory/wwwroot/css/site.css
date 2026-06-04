@@ -36,7 +36,7 @@ body {
     color: #1E2A3A;
 }
 
-[data-bs-theme="dark"]{
+[data-bs-theme="dark"] {
     --bs-body-bg: #1a1d21;
     --bs-body-bg-rgb: 26, 29, 33;
 }
@@ -205,7 +205,6 @@ header {
 .stat-number{
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1E2A3A;
 }
 
 .stat-card-devices {

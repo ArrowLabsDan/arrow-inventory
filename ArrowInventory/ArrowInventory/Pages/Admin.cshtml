@@ -79,3 +79,75 @@
     </table>
 </div>
 
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-body-tertiary border-secondary mb-4">
+                <div class="card-header">Create User</div>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-page-handler="CreateUser">
+
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input asp-for="NewUsername" class="form-control"/>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>DisplayName</label>
+                        <input asp-for="NewDisplayName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input asp-for="NewPassword" type="password" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Role</label>
+                        <select asp-for="NewRole" class="form-control">
+                            <option>Admin</option>
+                            <option>Read & Write</option>
+                            <option>Read Only</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Create User
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <table class="table table-bordered table-hover text-center align-middle">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>DisplayName</th>
+                <th>UserID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>@user.DisplayName</td>
+                    <td>@user.Id</td>
+                    <td>
+                        <form method="post" asp-page-handler="DeleteUser">
+                            <input type="hidden" name="userID" value="@user.Id" />
+                            <button type="submit" class="dropdown-item text-danger">
+                                <span class="material-symbols-outlined">delete</span>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

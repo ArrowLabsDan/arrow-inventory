@@ -7,5 +7,6 @@ namespace ArrowInventory.Models
 
         public string? DisplayName { get; set; }
 
+
     }
 }
