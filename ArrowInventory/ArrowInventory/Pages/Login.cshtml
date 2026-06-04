@@ -1,0 +1,52 @@
+﻿@page
+@model ArrowInventory.Pages.LoginModel
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Login - ArrowInventory</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+    </head>
+    <body class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="card shadow" style="width: 400px; border-radius: 12px;">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <img src="https://arwlabazblob.blob.core.windows.net/intune-assets/ArrowLabs-Icon.png"
+                         alt="ArrowLabs Logo" width="60" height="60" class="mb-3"/>
+                         <h3>ArrowInventory</h3>
+                         <p class="text-secondary">Sign in to your account</p>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                {
+                    <div class="alert alert-dange">@Model.ErrorMessage</div>
+                }
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input asp-for="Username" class="form-control" placeholder="Enter Username"/>
+                    </div>
+                <div class="mb-3">
+                    <label>Password</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password" />
+                </div>
+                <div class="mb-3 form-check">
+                    <input asp-for="RememberMe" class="form-check-input"/>
+                    <label class="form-check-label">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                </form>
+            </div>
+        </div>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
