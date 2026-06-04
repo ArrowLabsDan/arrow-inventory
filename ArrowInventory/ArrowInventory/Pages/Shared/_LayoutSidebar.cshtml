@@ -48,12 +48,16 @@
                             <span class="sidebar-text">Manage Devices</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link sidebar-link" asp-page="/Admin">
-                        <span class="material-symbols-outlined sidebar-icon">settings</span>
-                            <span class="sidebar-text">Admin</span>
-                        </a>
-                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link sidebar-link" asp-page="/Admin">
+                                <span class="material-symbols-outlined sidebar-icon">settings</span>
+                                <span class="sidebar-text">Admin</span>
+                            </a>
+                        </li>
+                    }
+
                 </ul>
                 
                 <div class="sidebar-footer p-3 mt-auto">

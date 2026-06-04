@@ -1,11 +1,13 @@
 using ArrowInventory.Models;
 using ArrowInventory.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ArrowInventory.Pages
 {
+    /*[Authorize(Roles = "Admin")] -- Need a logout button before we can make this live*/ 
     public class AdminModel : PageModel
     {
         private readonly SiteService _siteService;
