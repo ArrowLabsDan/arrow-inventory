@@ -25,7 +25,7 @@
                         <h6 class="text-center text-secondary">
                             Total Devices
                         </h6>
-                        <h2 class="text-center">@Model.Devices.Count</h2>
+                        <h2 class="text-center stat-number stat-card-devies">@Model.Devices.Count</h2>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                         <h6 class="text-center text-secondary">
                             Total Virtual Machines
                         </h6>
-                        <h2 class="text-center">@Model.Devices.Count(d => d.isVirtualMachine == true)</h2>
+                        <h2 class="text-center stat-number stat-card-vms">@Model.Devices.Count(d => d.isVirtualMachine == true)</h2>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                         <h6 class="text-center text-secondary">
                             Total Physical Machines
                         </h6>
-                        <h2 class="text-center">@Model.Devices.Count(d => d.isVirtualMachine == false)</h2>
+                        <h2 class="text-center stat-number stat-card-physical">@Model.Devices.Count(d => d.isVirtualMachine == false)</h2>
                     </div>
                 </div>
             </div>
