@@ -99,6 +99,11 @@
                     </div>
 
                     <div class="mb-3">
+                        <label>Email</label>
+                        <input asp-for="NewEmail" class="form-control" type="email" />
+                    </div>
+
+                    <div class="mb-3">
                         <label>Password</label>
                         <input asp-for="NewPassword" type="password" class="form-control" />
                     </div>
@@ -127,6 +132,8 @@
                 <th>Username</th>
                 <th>DisplayName</th>
                 <th>UserID</th>
+                <th>Email</th>
+                <th>Role</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -138,6 +145,8 @@
                     <td>@user.UserName</td>
                     <td>@user.DisplayName</td>
                     <td>@user.Id</td>
+                    <td>@user.Email</td>
+                    <td>@string.Join(",", Model.UserRoles.GetValueOrDefault(user.Id, new List<string>()))</td>
                     <td>
                         <form method="post" asp-page-handler="DeleteUser">
                             <input type="hidden" name="userID" value="@user.Id" />

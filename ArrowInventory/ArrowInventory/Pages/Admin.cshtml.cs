@@ -28,10 +28,14 @@ namespace ArrowInventory.Pages
         public string NewDisplayName { get; set; } = "";
         [BindProperty]
         public string NewRole { get; set; } = "ReadOnly";
+        [BindProperty]
+        public string NewEmail { get; set; } = "";
         public List<ApplicationUser> Users { get; set; } = [];
+        public Dictionary<string, IList<string>> UserRoles { get; set; } = new();
 
         public string StatusMessage { get; set; } = "";
         public string StatusType { get; set; } = "";
+
 
         public AdminModel(SiteService siteService, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
@@ -44,6 +48,12 @@ namespace ArrowInventory.Pages
         {
             Sites = _siteService.GetSites();
             Users = _userManager.Users.ToList();
+
+            foreach (var user in Users)
+            {
+                UserRoles[user.Id] = await _userManager.GetRolesAsync(user);
+            }
+
         }
 
         public IActionResult OnPost()
@@ -123,6 +133,7 @@ namespace ArrowInventory.Pages
             {
                 UserName = NewUsername,
                 DisplayName = NewDisplayName,
+                Email = NewEmail,
                 EmailConfirmed = true
             };
 

@@ -137,9 +137,16 @@ header {
 }
 
 .sidebar-collapsed .sidebar-footer{
-    display: flex;
-    justify-content: center;
+    align-items: center;
 }
+
+.sidebar-collapsed .sidebar-footer button,
+.sidebar-collapsed .sidebar-footer form,
+.sidebar-collapsed .sidebar-footer from button{
+    justify-content: center;
+    padding: 10px 0;
+}
+
 
 .sidebar-collapsed #themeToggle{
     justify-content: center;

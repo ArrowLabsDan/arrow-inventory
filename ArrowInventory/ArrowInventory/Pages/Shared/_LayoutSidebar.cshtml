@@ -59,24 +59,29 @@
                     }
 
                 </ul>
-
-
-                
+ 
                 <div class="sidebar-footer p-3 mt-auto">
-                    <hr class="sidebar-divider"/>
-                    <button class="btn btn-sm sidebar-link w-100 text-start" id="themeToggle">
+                    <hr class="sidebar-divider" />
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <div class="sidebar-link px-2 py-2 text-truncate d-flex align-items-center">
+                            <span class="material-symbols-outlined sidebar-icon">account_circle</span>
+                            <span class="sidebar-text text-white">@User.Identity.Name</span>
+                        </div>
+                    }
+                    <button class="btn btn-sm sidebar-link w-100 text-start ps-0" id="themeToggle">
                         <span class="material-symbols-outlined sidebar-icon" id="themeIcon">toggle_off</span>
                         <span class="sidebar-text">Toggle Theme</span>
                     </button>
-
-                    <form method="post" asp-area="Identiity" asp-page="/Account/Logout" asp-route-returnURL="/">
+                    <form method="post" asp-page="/Logout">
                         <button type="submit" class="btn btn-sm sidebar-link w-100 text-start">
-                        <span class="material-symbols-outlined">logout</span>
-                            Logout
+                            <span class="material-symbols-outlined sidebar-icon">logout</span>
+                            <span class="sidebar-text">Logout</span>
                         </button>
                     </form>
-
                 </div>
+
             </div>
 
             <div id="page-content" class="flex-grow-1">

@@ -57,6 +57,15 @@
                     </ul>
                 </div>
             </div>
+
+            @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="sidebar-link px-2 py-2 text-truncate">
+                        <span class="material-symbols-outlined sidebar-icon">account_circle</span>
+                        <span class="sidebar-text text-white">@User.Identity.Name</span>
+                    </div>
+                }
+
         </nav>
     </header>
     <div class="container">

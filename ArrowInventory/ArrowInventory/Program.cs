@@ -8,7 +8,15 @@ using Microsoft.EntityFrameworkCore;
     var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeFolder("/");
+    options.Conventions.AllowAnonymousToPage("/Login");
+    options.Conventions.AllowAnonymousToPage("/Logout");
+
+});
+
+
 builder.Services.AddScoped<DeviceService>();
 builder.Services.AddScoped<SiteService>();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -16,6 +24,12 @@ options.UseSqlite("Data Source=ArrowInventory.db"));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login";
+    options.LogoutPath = "/Logout";
+});
 
 var app = builder.Build();
 
