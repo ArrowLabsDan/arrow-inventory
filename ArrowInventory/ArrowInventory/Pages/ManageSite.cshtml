@@ -1,0 +1,98 @@
+﻿@page
+@model ArrowInventory.Pages.ManageSiteModel
+@{
+    Layout = "_LayoutSidebar";
+    ViewData["Title"] = "Site Admin";
+}
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <div>
+        <h1 class="mb-0">ArrowLabs Inventory</h1>
+        <small class="text-secondary">
+            ArrowLabs Site Management
+        </small>
+    </div>
+
+</div>
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-@TempData["StatusType"]">
+        @TempData["StatusMessage"]
+
+    </div>
+}
+
+
+<div class="card bg-body-tertiary border-secondary mb-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6">
+
+            <div class="text-center">
+                <h3>Create Site</h3>
+            </div>
+
+            <form method="post">
+                <div class=" mb-2">
+                    <label>Site Name</label>
+
+                    <input asp-for="SiteName" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Site Code</label>
+
+                    <input asp-for="SiteCode" class="form-control" />
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary mb-3">
+                        Submit
+                    </button>
+
+                    <button type="reset" class="btn btn-secondary mb-3">
+                        Clear
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <h3>Manage Sites</h3>
+</div>
+
+<div class="mb-3">
+    <table class="table table-bordered table-hover mb-0 text-center align-middle">
+        <thead>
+            <tr>
+                <th>Site Name</th>
+                <th>Site Code</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var site in Model.Sites)
+            {
+                <tr>
+                    <td>@site.SiteName</td>
+                    <td>@site.SiteCode</td>
+                    <td class="text-center">
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden"
+                                   name="sitecode"
+                                   value="@site.SiteCode" />
+                            <button type="submit"
+                                    class="dropdown-item text-danger"
+                                    onclick="event.stopPropagation()">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

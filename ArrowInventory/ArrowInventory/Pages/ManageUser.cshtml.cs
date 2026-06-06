@@ -1,0 +1,110 @@
+using ArrowInventory.Models;
+using ArrowInventory.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace ArrowInventory.Pages
+{
+
+    public class ManageUserModel : PageModel
+    {
+
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        [BindProperty]
+        public string NewUsername { get; set; } = "";
+        [BindProperty]
+        public string NewPassword { get; set; } = "";
+        [BindProperty]
+        public string NewDisplayName { get; set; } = "";
+        [BindProperty]
+        public string NewRole { get; set; } = "ReadOnly";
+        [BindProperty]
+        public string NewEmail { get; set; } = "";
+        public List<ApplicationUser> Users { get; set; } = [];
+        public Dictionary<string, IList<string>> UserRoles { get; set; } = new();
+
+
+        public ManageUserModel(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            _userManager = userManager;
+            _roleManager = roleManager;
+        }
+
+        public async Task OnGetAsync()
+        {
+            Users = _userManager.Users.ToList();
+
+            foreach (var user in Users)
+            {
+                UserRoles[user.Id] = await _userManager.GetRolesAsync(user);
+            }
+
+        }
+
+        public async Task<IActionResult> OnPostCreateUserAsync()
+        {
+            Users = _userManager.Users.ToList();
+
+            if (String.IsNullOrWhiteSpace(NewUsername) || string.IsNullOrWhiteSpace(NewPassword))
+            {
+                TempData["StatusMessage"] = "Username and password are required";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
+
+            foreach (var role in new[] { "Admin", "Read & Write", "Read Only" })
+            {
+                if (!await _roleManager.RoleExistsAsync(role))
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+            }
+
+            var user = new ApplicationUser
+            {
+                UserName = NewUsername,
+                DisplayName = NewDisplayName,
+                Email = NewEmail,
+                EmailConfirmed = true
+            };
+
+            var result = await _userManager.CreateAsync(user, NewPassword);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, NewRole);
+                TempData["StatusMessage"] = $"{NewUsername} created succesfully";
+                TempData["StatusType"] = "success";
+            }
+            else
+            {
+                TempData["StatusMessage"] = string.Join(", ", result.Errors.Select(e => e.Description));
+                TempData["StatusType"] = "danger";
+            }
+
+            return RedirectToPage();
+
+        }
+
+        public async Task<IActionResult> OnPostDeleteUserAsync(string userID)
+        {
+            var user = await _userManager.FindByIdAsync(userID);
+
+            if (user != null)
+                await _userManager.DeleteAsync(user);
+
+            /* Commented out for now - Will add when auth is enforced
+            if (user.UserName == User.Identity?.Name)
+            {
+                TempData["StatusMessage"] = "You cannot delete your own account";
+                TempData["StatusType"] = "danger";
+            }
+
+            */
+            return RedirectToPage();
+        }
+
+    }
+}

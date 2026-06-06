@@ -9,12 +9,15 @@ namespace ArrowInventory.Pages
     {
 
         private readonly DeviceService _deviceService;
+        private readonly SiteService _siteService;
 
         public List<Devices> Devices { get; set; } = [];
+        public List<Sites> Sites { get; set; } = [];
 
-        public IndexModel(DeviceService deviceService)
+        public IndexModel(DeviceService deviceService, SiteService siteService)
         {
             _deviceService = deviceService;
+            _siteService = siteService;
         }
 
 
@@ -23,6 +26,7 @@ namespace ArrowInventory.Pages
         {
 
             Devices = _deviceService.GetDevices();
+            Sites = _siteService.GetSites();
 
         }
 
