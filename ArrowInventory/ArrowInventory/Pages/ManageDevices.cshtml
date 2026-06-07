@@ -15,7 +15,13 @@
     </div>
 
 </div>
+@if (TempData["StatusMessage"] != null)
+{
+    <div class="alert alert-@TempData["StatusType"]">
+        @TempData["StatusMessage"]
 
+    </div>
+}
 <div class="card bg-body-tertiary border-secondary mb-4">
     <div class="card-body">
         <div class="row d-flex justify-content-center">
@@ -350,6 +356,32 @@
             });
         });
 
+        // fix dropdown clipping
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('show.bs.dropdown', function() {
+                const menu = this.querySelector('.dropdown-menu');
+                const btn = this.querySelector('[data-bs-toggle="dropdown"]');
+                const rect = btn.getBoundingClientRect();
+
+                document.body.appendChild(menu);
+                menu.style.position = 'fixed';
+                menu.style.top = rect.bottom + 'px';
+                menu.style.left = (rect.right - menu.offsetWidth) + 'px';
+                menu.style.zIndex = '9999';
+                menu.style.display = 'block';
+            });
+
+            dropdown.addEventListener('hide.bs.dropdown', function(){
+                const menu = this.querySelector('.dropdown-menu') || document.body.querySelector('.dropdown-menu.show');
+                if (menu)
+                {
+                    this.appendChild(menu);
+                    menu.style.cssText = '';
+                }
+
+            });
+
+        });
 
         function populateModal(row, editMode) {
 

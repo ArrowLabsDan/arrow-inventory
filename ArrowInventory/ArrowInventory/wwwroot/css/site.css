@@ -264,3 +264,8 @@ header {
     border: none;
     width: 100%;
 }
+
+.table-responsive {
+    overflow-x:auto;
+    overflow-y:visible;
+}
