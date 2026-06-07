@@ -122,6 +122,18 @@
                                     </button>
                                 </li>
                                 <li>
+                                    <button class="dropdown-item reset-pw-btn text-danger"
+                                        type="button"
+                                        data-userid="@user.Id"
+                                        data-username="@user.UserName"
+                                        onclick="event.stopPropagation()">
+                                        <span class="material-symbols-outlined">passkey</span>
+                                        Reset Password
+                                    </button>
+                                </li>
+
+
+                                <li>
                                     <form method="post" asp-page-handler="DeleteUser">
                                         <input type="hidden" name="userID" value="@user.Id" />
                                         <button type="submit" class="dropdown-item text-danger">
@@ -174,11 +186,38 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" form="editUserForm" class="btn btn-primary">Save</button>
             </div>
-
         </div>
     </div>
 </div>
 
+<div class="modal fade" id="resetPwModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title">Reset Password -<span id="resetPwUsername"></span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page-handler="ResetUserPassword" id="resetPwForm">
+                    <input type="hidden" name="userID" id="resetPwUserId" />
+                    <div class="mb-3">
+                        <label>New Password<span class="text-danger">*</span></label>
+                        <input class="form-control" name="newPassword" id="resetNewPassword" type="password" />
+                    </div>
+                    <div class="mb-3">
+                        <label>Confirm Password <span class="test-danger">*</span></label>
+                        <input class="form-control" name="confirmPassword" id="resetConfirmPassword" type="password" />
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" form="resetPwForm" class="btn btn-primary">Reset Password</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <script>
@@ -193,6 +232,17 @@
 
                 new bootstrap.Modal(document.getElementById('editUserModal')).show();
 
+            });
+        });
+
+        document.querySelectorAll('.reset-pw-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.getElementById('resetPwUserId').value = this.dataset.userid;
+                document.getElementById('resetPwUsername').textContent = this.dataset.username;
+                document.getElementById('resetNewPassword').value = '';
+                document.getElementById('resetConfirmPassword').value= '';
+
+                new bootstrap.Modal(document.getElementById('resetPwModal')).show();
             });
         });
 

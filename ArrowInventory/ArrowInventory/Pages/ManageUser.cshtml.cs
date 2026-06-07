@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
 namespace ArrowInventory.Pages
 {
 
@@ -145,7 +146,48 @@ namespace ArrowInventory.Pages
 
             return RedirectToPage();
         }
+        
+        public async Task<IActionResult> OnPostResetUserPasswordAsync(string userId, string newPassword, string confirmPassword)
+        {
+            if (string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmPassword))
+            {
+                TempData["StatusMessage"] = "Both password fields are required";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
 
+            if (newPassword != confirmPassword)
+            {
+                TempData["StatusMessage"] = "Passwords do not match";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                TempData["StatusMessage"] = "User not found";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
+
+            if (result.Succeeded)
+            {
+                TempData["StatusMessage"] = $"{user.DisplayName} password reset successfully";
+                TempData["StatusType"] = "success";
+            }
+            else
+            {
+                TempData["StatusMessage"] = string.Join(",", result.Errors.Select(e => e.Description));
+                TempData["StatusType"] = "danger";
+            }
+
+            return RedirectToPage();
+
+        }
 
 
     }
