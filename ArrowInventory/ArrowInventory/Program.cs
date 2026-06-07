@@ -33,10 +33,36 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     db.Database.Migrate();
+
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    if (!userManager.Users.Any())
+    {
+        foreach (var role in new[] {"Admin", "Read & Write", "Read Only"})
+        {
+            if (!await roleManager.RoleExistsAsync(role))
+                await roleManager.CreateAsync(new IdentityRole(role));
+        }
+
+        var adminUser = new ApplicationUser
+        {
+            UserName = "admin",
+            DisplayName = "Administrator",
+            Email = "admin@arrowlabs.local",
+            EmailConfirmed = true
+        };
+
+        await userManager.CreateAsync(adminUser, "Admin@123!");
+        await userManager.AddToRoleAsync(adminUser, "Admin");
+    }
+
+
+
 }
 
 // Configure the HTTP request pipeline.
