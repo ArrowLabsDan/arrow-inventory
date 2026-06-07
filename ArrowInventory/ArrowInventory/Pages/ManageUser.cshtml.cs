@@ -116,9 +116,20 @@ namespace ArrowInventory.Pages
         {
 
             var user = await _userManager.FindByIdAsync(userID);
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            if (user.Id == currentUser?.Id)
+            {
+                TempData["StatusMessage"] = "You cannot delete your own account";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
+
             if (user != null)
                 await _userManager.DeleteAsync(user);
-          
+
+
+
             return RedirectToPage();
         }
 

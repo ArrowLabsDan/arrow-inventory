@@ -2,6 +2,7 @@ using ArrowInventory.Models;
 using ArrowInventory.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text;
 
 namespace ArrowInventory.Pages
 {
@@ -34,8 +35,28 @@ namespace ArrowInventory.Pages
             return RedirectToPage();
         }
 
+        public IActionResult OnGetExport()
+        {
+            var devices = _deviceService.GetDevices();
+            var csv = new StringBuilder();
+            csv.AppendLine("Hostname,SiteCode,SerialNumber,Model,IP,MACAddress,IsVirtualMachine,Locatiom,CPU,RAM,Storage,OS,Description");
+
+            foreach (var d in devices)
+                csv.AppendLine($"{d.Hostname},{d.SiteCode},{d.SerialNumber},{d.Model},{d.IP},{d.MACAddress},{d.isVirtualMachine},{d.location},{d.CPU},{d.RAM},{d.Storage},{d.OS},{d.description}");
+
+            return File(Encoding.UTF8.GetBytes(csv.ToString()), "text/csv", "devices.csv");
+        }
+
+
         public IActionResult OnPostEdit(string hostname, string serialNumber, string model, bool isVirtualMachine, string ip, string description, string location, string cpu, string ram, string storage, string macaddress, string os, string sitecode)
         {
+            if (string.IsNullOrWhiteSpace(sitecode))
+            {
+                TempData["StatusMessage"] = "Site cannot be empty";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
+
             var updated = new Devices
             {
                 Hostname = hostname,
