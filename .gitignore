@@ -6,3 +6,6 @@
 *.vsidx
 /ArrowInventory/ArrowInventory/Data/Devices.json
 /ArrowInventory/ArrowInventory/Data/Sites.json
+/ArrowInventory/ArrowInventory/Properties/PublishProfiles/Arrow-AssetTest - Web Deploy.pubxml.user
+/ArrowInventory/ArrowInventory/ArrowInventory.db-shm
+/ArrowInventory/ArrowInventory/ArrowInventory.db-wal
