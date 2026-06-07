@@ -13,6 +13,9 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AuthorizeFolder("/");
     options.Conventions.AllowAnonymousToPage("/Login");
     options.Conventions.AllowAnonymousToPage("/Logout");
+    options.Conventions.AuthorizePage("/Admin", "Admin");
+    options.Conventions.AuthorizePage("/ManagerUser", "Admin");
+    options.Conventions.AuthorizePage("/ManageSite", "Admin");
 
 });
 
@@ -29,6 +32,11 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Login";
     options.LogoutPath = "/Logout";
+});
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
 });
 
 var app = builder.Build();
