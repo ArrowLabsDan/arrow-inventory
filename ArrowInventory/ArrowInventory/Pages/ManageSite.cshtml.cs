@@ -16,6 +16,8 @@ namespace ArrowInventory.Pages
         public string SiteCode { get; set; } = "";
         [BindProperty]
         public string SiteName { get; set; } = "";
+        [BindProperty]
+        public string siteCountry { get; set; } = "";
         public List<Sites> Sites { get; set; } = [];
         public string StatusMessage { get; set; } = "";
         public string StatusType { get; set; } = "";
@@ -50,6 +52,12 @@ namespace ArrowInventory.Pages
                 return RedirectToPage();
             }
 
+            if (string.IsNullOrWhiteSpace(siteCountry))
+            {
+                TempData["StatusMessage"] = "Country Cannot be empty";
+                TempData["StatusType"] = "danger";
+                return RedirectToPage();
+            }
 
             if (Sites.Any(x => x.SiteName.ToLower() == SiteName.ToLower()))
             {
@@ -68,7 +76,8 @@ namespace ArrowInventory.Pages
             _siteService.AddSite(new Sites
             {
                 SiteName = SiteName,
-                SiteCode = SiteCode
+                SiteCode = SiteCode,
+                siteCountry = siteCountry
             });
 
 

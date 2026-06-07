@@ -4,9 +4,8 @@
     Layout = null;
 
 }
-
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="login">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,10 +24,14 @@
                          <p class="text-secondary">Sign in to your account</p>
                 </div>
 
-                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
-                {
-                    <div class="alert alert-dange">@Model.ErrorMessage</div>
-                }
+            @if (TempData["StatusMessage"] != null)
+            {
+                <div class="alert alert-@TempData["StatusType"]">
+                    @TempData["StatusMessage"]
+
+                </div>
+            }
+
 
                 <form method="post">
                     <div class="mb-3">

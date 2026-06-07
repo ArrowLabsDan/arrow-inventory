@@ -22,6 +22,19 @@ body {
 
 }
 
+[data-bs-theme="login"] {
+    --bs-body-bg: #D7DBDF;
+    --bs-body-bg-rgb: 215, 219, 223;
+    --bs-tertiary-bg: #BEC4CB;
+    --bs-tertiary-bg-rgb: 190, 196, 203;
+}
+
+    [data-bs-theme="login"] body {
+        background: linear-gradient(120deg, #BEC4CB 0%, #223D2C 50%, #B6B4B8 50%);
+        background-attachment: fixed;
+        color: #1E2A3A;
+    }
+
 
 [data-bs-theme="light"] {
     --bs-body-bg: #D7DBDF;
@@ -233,4 +246,14 @@ header {
 
 .stat-card-physical {
     border-top: 4px solid #f59e08 !important;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal {
+    position: fixed !important;
 }

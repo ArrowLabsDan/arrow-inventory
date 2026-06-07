@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using ArrowInventory.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Windows.Networking;
 
 namespace ArrowInventory.Pages
 {
@@ -37,16 +38,18 @@ namespace ArrowInventory.Pages
         {
             if (String.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
                 {
-                ErrorMessage = "Username and password are required.";
+                TempData["StatusMessage"] = "Username and password are required.";
+                TempData["StatusType"] = "danger";
                 return Page();
             }
 
             var result = await _signInManager.PasswordSignInAsync(Username, Password, RememberMe, lockoutOnFailure: false);
-
             if (result.Succeeded)
                 return RedirectToPage("/Index");
 
-            ErrorMessage = "Invalid Username or Password";
+            TempData["StatusMessage"] = "Invalid Username or Password";
+            TempData["StatusType"] = "danger";
+
             return Page();
 
 

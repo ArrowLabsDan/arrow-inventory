@@ -7,6 +7,7 @@ namespace ArrowInventory.Models
         [Key]
         public string SiteCode { get; set; } = "";
         public string SiteName { get; set; } = "";
+        public string siteCountry { get; set; } = "";
 
     }
 }

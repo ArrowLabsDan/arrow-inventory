@@ -16,6 +16,8 @@ namespace ArrowInventory.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             await _signInManager.SignOutAsync();
+            TempData["StatusMessage"] = "Logged out successfully.";
+            TempData["StatusType"] = "success";
             return RedirectToPage("/Login");
         }
 
