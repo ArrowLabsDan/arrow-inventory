@@ -257,3 +257,10 @@ header {
 .modal {
     position: fixed !important;
 }
+
+.sidebar-footer button.sidebar-link
+{
+    background: none;
+    border: none;
+    width: 100%;
+}
