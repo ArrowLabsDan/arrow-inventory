@@ -6,6 +6,7 @@ namespace ArrowInventory.Models
     {
 
         public string? DisplayName { get; set; }
+        public DateTime? PasswordChangeDate { get; set; }
 
 
     }

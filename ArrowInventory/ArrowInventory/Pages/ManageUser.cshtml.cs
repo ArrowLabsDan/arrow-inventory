@@ -187,6 +187,8 @@ namespace ArrowInventory.Pages
 
             if (result.Succeeded)
             {
+                user.PasswordChangeDate = DateTime.UtcNow;
+                await _userManager.UpdateAsync(user);
                 TempData["StatusMessage"] = $"{user.DisplayName} password reset successfully";
                 TempData["StatusType"] = "success";
             }

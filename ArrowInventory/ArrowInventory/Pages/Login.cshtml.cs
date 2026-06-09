@@ -10,6 +10,7 @@ namespace ArrowInventory.Pages
     {
 
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         [BindProperty]
         public string Username { get; set; } = "";
@@ -20,9 +21,10 @@ namespace ArrowInventory.Pages
         public string ErrorMessage { get; set; } = "";
 
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager)
+        public LoginModel(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
         {
             _signInManager = signInManager;
+            _userManager = userManager;
         }
 
 
@@ -45,7 +47,18 @@ namespace ArrowInventory.Pages
 
             var result = await _signInManager.PasswordSignInAsync(Username, Password, RememberMe, lockoutOnFailure: false);
             if (result.Succeeded)
+            {
+                var loggedInUser = await _userManager.FindByNameAsync(Username);
+                if (loggedInUser?.PasswordChangeDate == null ||
+                    loggedInUser.PasswordChangeDate < DateTime.UtcNow.AddDays(-31))
+                {
+                    TempData["ForceReset"] = true;
+                    return RedirectToPage("/ForceResetPassword");
+                }
+
                 return RedirectToPage("/Index");
+            }
+
 
             TempData["StatusMessage"] = "Invalid Username or Password";
             TempData["StatusType"] = "danger";

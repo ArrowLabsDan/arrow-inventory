@@ -13,6 +13,7 @@ builder.Services.AddRazorPages(options =>
     options.Conventions.AuthorizeFolder("/");
     options.Conventions.AllowAnonymousToPage("/Login");
     options.Conventions.AllowAnonymousToPage("/Logout");
+    options.Conventions.AllowAnonymousToPage("/ForceResetPassword");
     options.Conventions.AuthorizePage("/Admin", "Admin");
     options.Conventions.AuthorizePage("/ManagerUser", "Admin");
     options.Conventions.AuthorizePage("/ManageSite", "Admin");
@@ -66,6 +67,7 @@ var app = builder.Build();
         };
 
         await userManager.CreateAsync(adminUser, "Admin@123!");
+        adminUser.PasswordChangeDate = DateTime.MinValue;
         await userManager.AddToRoleAsync(adminUser, "Admin");
     }
 

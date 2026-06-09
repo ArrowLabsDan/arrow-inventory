@@ -46,6 +46,9 @@ namespace ArrowInventory.Pages
 
             if(result.Succeeded)
             {
+                user.PasswordChangeDate = DateTime.UtcNow;
+                await _userManager.UpdateAsync(user);
+
                 await _signInManager.RefreshSignInAsync(user);
                 TempData["StatusMessage"] = "Password changed successfully";
                 TempData["StatusType"] = "success";
