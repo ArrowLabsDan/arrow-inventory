@@ -130,6 +130,7 @@ header {
     transition: width 0.3s ease;
     background: linear-gradient(180deg, rgba(33, 37, 41, 0.95), rgba(50, 55, 60, 0.90));
     backdrop-filter: blur(12px);
+    z-index: 2000;
 }
 
 .sidebar-expanded{
@@ -151,6 +152,7 @@ header {
 
 .sidebar-collapsed .sidebar-footer{
     align-items: center;
+    overflow: visible;
 }
 
 .sidebar-collapsed .sidebar-footer button,
@@ -268,4 +270,25 @@ header {
 .table-responsive {
     overflow-x:auto;
     overflow-y:visible;
+}
+
+.sidebar-collapsed .drop-menu{
+    left: 100% !important;
+    bottom: 0 !important;
+    margin-left: 10px;
+    min-width: 220px !important;
+    width: auto !important;
+}
+
+.sidebar .drop-menu {
+    left: 100% !important;
+    bottom: 0 !important;
+    margin-left: 10px;
+    min-width: 220px !important;
+    width: auto !important;
+}
+
+.sidebar-footer .dropdown > button:focus{
+    box-shadow: none !important;
+    outline: none !important;
 }

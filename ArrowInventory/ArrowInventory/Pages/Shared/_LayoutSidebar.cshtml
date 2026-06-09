@@ -65,26 +65,37 @@
 
                     @if (User.Identity?.IsAuthenticated == true)
                     {
-                        <div class="sidebar-link d-flex align-items-center">
-                            <span class="material-symbols-outlined sidebar-icon">account_circle</span>
-                            <span class="sidebar-text text-white">@User.Identity.Name</span>
-                        </div>
 
-                        <a class="sidebar-link d-flex align-items-center text-decoration-none" asp-page="/ResetPassword">
-                        <span class="material-symbols-outlined sidebar-icon">lock_reset</span>
-                        <span class="sidebar-text">Reset Password</span>
-                        </a>
+                    <div class="dropdown" style="background:none; border:none; width:100%;">
+                            <button class="sidebar-link btn btn-sm"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                onclick="event.stopPropagation()">
+                                <span class="material-symbols-outlined sidebar-icon">account_circle</span>
+                                <span class="sidebar-text">@User.Identity.Name</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-start mb-2">
+                                <li>   
+                                    <a class="sidebar-link d-flex align-items-center text-decoration-none" asp-page="/ResetPassword">
+                                        <span class="material-symbols-outlined sidebar-icon text-danger">lock_reset</span>
+                                        <span class="sidebar-text text-danger">Reset Password</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <form method="post" asp-page="/Logout" onsubmit="return confirm('Are you sure you want to logout?')">
+                                        <button type="submit" class="sidebar-link" style="background:none; border:none; width:100%;">
+                                            <span class="material-symbols-outlined sidebar-icon text-danger">logout</span>
+                                            <span class="sidebar-text text-danger">Logout</span>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     }
                     <button class="sidebar-link" id="themeToggle" style="background:none; border:none; width:100%;"> 
                         <span class="material-symbols-outlined sidebar-icon" id="themeIcon">toggle_off</span>
                         <span class="sidebar-text">Toggle Theme</span>
                     </button>
-                    <form method="post" asp-page="/Logout" onsubmit="return confirm('Are you sure you want to logout?')">
-                    <button type="submit" class="sidebar-link" style="background:none; border:none; width:100%;">
-                            <span class="material-symbols-outlined sidebar-icon">logout</span>
-                            <span class="sidebar-text">Logout</span>
-                        </button>
-                    </form>
                 </div>
 
             </div>
